@@ -42,7 +42,7 @@ build/
 .vite
 
 # Tailwind CSS
-tailwind.config.js
+# tailwind.config.js - Removed to allow Vercel access during build
 
 # IDEs and editors
 .idea/
