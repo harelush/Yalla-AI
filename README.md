@@ -1,284 +1,104 @@
-# קורסים מקוונים - Hebrew Landing Page
+# YallaAI - Landing Page
 
-A modern, responsive Hebrew landing page built with React, Vite, and Tailwind CSS. Designed for an online course platform targeting both young adults (20-30) and mature learners (40-65).
+A fully responsive, RTL (Right-to-Left), mobile-first landing page built with Next.js and Tailwind CSS for YallaAI - an advanced educational platform.
 
-## 🌟 Features
+## 🚀 Features
 
-### 🎯 Target Audiences
-- **Young Adults (20-30)**: Recent military veterans, students exploring career directions
-- **Mature Learners (40-65)**: Professionals seeking career development and new skills
+- **RTL Support**: Complete Hebrew language support with proper RTL layout
+- **Mobile-First Design**: Optimized for mobile devices with responsive breakpoints
+- **Modern Animations**: Smooth Framer Motion animations and interactions
+- **Accessibility**: WCAG AA compliant with proper Hebrew aria-labels
+- **Form Integration**: Contact form with validation and mock API endpoint
+- **Performance Optimized**: Built with Next.js for optimal performance
 
-### 🎨 Design & UX
-- **RTL Support**: Full right-to-left layout for Hebrew content
-- **Responsive Design**: Mobile-first approach with beautiful desktop layouts
-- **Modern UI**: Clean, professional design with smooth animations
-- **Accessibility**: ARIA labels, keyboard navigation, and screen reader support
+## 🎨 Design Highlights
 
-### 🚀 Technical Features
-- **React 18**: Latest React with hooks and modern patterns
-- **Vite**: Fast development and optimized builds
-- **Tailwind CSS**: Utility-first CSS with custom RTL configuration
-- **TypeScript Ready**: Full TypeScript support available
-- **SEO Optimized**: Meta tags, Open Graph, structured data
-- **PWA Ready**: Manifest file and service worker support
-
-### 📈 Marketing & Analytics Ready
-- **Google Analytics**: Ready-to-activate tracking code
-- **Facebook Pixel**: Prepared for conversion tracking
-- **Contact Forms**: Validated forms with marketing automation hooks
-- **A/B Testing**: Component structure ready for testing
+- **Futuristic Theme**: Modern technological vibe with gradient effects
+- **Color Scheme**: Deep navy purple backgrounds with bright accent colors
+- **Typography**: Hebrew-optimized fonts with proper text alignment
+- **Interactive Elements**: Hover effects, animations, and smooth transitions
+- **Floating CTA**: Sticky call-to-action button for mobile users
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18, Vite, Tailwind CSS
-- **SEO**: React Helmet Async, structured data
-- **Routing**: React Router DOM
-- **Forms**: Custom validation with Hebrew support
-- **Fonts**: Google Fonts (Assistant, Heebo)
-- **Icons**: SVG icons and emojis
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS with RTL plugin
+- **Animations**: Framer Motion
+- **Language**: JavaScript (React)
+- **Content**: JSON-based content management
 
-## 📁 Project Structure
+## 📦 Installation
 
-```
-src/
-├── components/           # Reusable UI components
-│   ├── Header.jsx       # Navigation header
-│   ├── Hero.jsx         # Hero section
-│   ├── Benefits.jsx     # Benefits showcase
-│   ├── Testimonials.jsx # Customer testimonials
-│   ├── Pricing.jsx      # Pricing plans
-│   ├── ContactForm.jsx  # Lead capture form
-│   └── Footer.jsx       # Site footer
-├── pages/               # Page components
-│   └── Home.jsx         # Main landing page
-├── assets/              # Static assets
-├── index.css           # Global styles and Tailwind
-├── main.jsx            # Application entry point
-└── App.jsx             # Main app component
-
-public/
-├── site.webmanifest    # PWA manifest
-├── robots.txt          # SEO robots file
-└── index.html          # HTML template
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 16+ 
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd hebrew-landing-page
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:3000`
-
-### Build for Production
-
+1. Clone the repository:
 ```bash
-npm run build
-# or
-yarn build
+git clone <repository-url>
+cd yalla-ai-landing
 ```
 
-### Preview Production Build
-
+2. Install dependencies:
 ```bash
-npm run preview
-# or
-yarn preview
+npm install
 ```
 
-## 📝 Customization
-
-### 1. Update Content
-Edit the Hebrew content in each component file:
-- `src/components/Hero.jsx` - Main headline and messaging
-- `src/components/Benefits.jsx` - Course benefits and features
-- `src/components/Testimonials.jsx` - Customer reviews
-- `src/components/Pricing.jsx` - Pricing plans and FAQs
-
-### 2. Styling
-The project uses Tailwind CSS with custom Hebrew fonts and RTL support:
-- `tailwind.config.js` - Tailwind configuration
-- `src/index.css` - Global styles and custom components
-
-### 3. SEO Configuration
-Update SEO settings in:
-- `index.html` - Basic meta tags
-- `src/App.jsx` - Structured data
-- `src/pages/Home.jsx` - Page-specific SEO
-
-### 4. Analytics Setup
-
-#### Google Analytics
-Uncomment and configure in `src/pages/Home.jsx`:
-```javascript
-// Replace GA_MEASUREMENT_ID with your actual ID
-gtag('config', 'GA_MEASUREMENT_ID');
+3. Run the development server:
+```bash
+npm run dev
 ```
 
-#### Facebook Pixel
-Uncomment and configure in `src/pages/Home.jsx`:
-```javascript
-// Replace YOUR_PIXEL_ID with your actual pixel ID
-fbq('init', 'YOUR_PIXEL_ID');
-```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🎨 Design Customization
+## 📝 Content Management
 
-### Colors
-Update the color scheme in `tailwind.config.js`:
-```javascript
-colors: {
-  primary: {
-    // Your primary colors
-  },
-  secondary: {
-    // Your secondary colors
-  }
-}
-```
+All text content is managed through the `data/content.json` file, making it easy to:
+- Update copy without touching code
+- Prepare for future language translations
+- Maintain consistency across the site
 
-### Fonts
-Hebrew fonts are configured in `tailwind.config.js` and loaded in `index.html`. Current fonts:
-- **Assistant**: Primary body font
-- **Heebo**: Headings and emphasis
+## 🎯 Sections
 
-### Components
-All components are modular and easily customizable:
-- Responsive breakpoints: `sm:`, `md:`, `lg:`, `xl:`
-- Spacing system: Tailwind's spacing scale
-- Typography: Responsive text sizes
+1. **Hero**: Main headline with call-to-action buttons
+2. **Benefits**: Grid of platform advantages
+3. **Testimonials**: Customer reviews and statistics
+4. **Program**: Features list and pricing information
+5. **FAQ**: Expandable frequently asked questions
+6. **Contact**: Lead capture form with validation
 
 ## 📱 Mobile Optimization
 
-The site is built mobile-first with:
-- Touch-friendly navigation
-- Optimized form inputs for mobile
-- Fast loading times
-- Responsive images and layouts
+- Responsive grid layouts that adapt to screen size
+- Touch-friendly interface elements
+- Floating sticky CTA button
+- Optimized typography and spacing
+- Hamburger navigation menu
 
-## 🔍 SEO Features
+## 🎨 Color Palette
 
-### Meta Tags
-- Hebrew language support (`lang="he"`, `dir="rtl"`)
-- Open Graph for social sharing
-- Twitter Cards
-- Canonical URLs
+- Deep Navy Purple: `#1b0c3d`
+- Dark Violet: `#3e2d69`
+- Bright Green: `#38d273`
+- Bright Violet: `#6f56fc`
+- Bright Pink: `#f04960`
+- Bright Orange: `#fea500`
+- Yellow Gold: `#ffdb4c`
 
-### Structured Data
-- Organization schema
-- Course schema
-- FAQ schema
-- Breadcrumb navigation
+## 🔧 API Endpoints
 
-### Performance
-- Vite for fast builds
-- Optimized images
-- Minimal dependencies
-- Progressive enhancement
+- `POST /api/contact`: Handles form submissions with validation
 
-## 🚀 Deployment
+## 🚀 Build & Deploy
 
-### Vercel (Recommended)
-1. Connect your repository to Vercel
-2. Configure build settings:
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-3. Deploy!
+```bash
+# Build for production
+npm run build
 
-### Netlify
-1. Connect your repository to Netlify
-2. Build settings:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-
-### Traditional Hosting
-1. Run `npm run build`
-2. Upload the `dist` folder to your web server
-
-## 🎯 Marketing Integration
-
-### Lead Capture
-The contact form includes:
-- Form validation
-- Required field handling
-- Marketing consent checkboxes
-- Analytics event tracking
-
-### A/B Testing Ready
-Components are structured for easy A/B testing:
-- Modular headline components
-- Swappable pricing plans
-- Configurable CTAs
-
-### Conversion Tracking
-Ready for marketing tools:
-- Google Analytics events
-- Facebook Pixel conversion tracking
-- Custom event handlers
-
-## 📊 Performance
-
-### Lighthouse Scores (Target)
-- **Performance**: 90+
-- **Accessibility**: 95+
-- **Best Practices**: 100
-- **SEO**: 100
-
-### Optimization Features
-- Lazy loading
-- Image optimization
-- CSS purging
-- JavaScript code splitting
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+# Start production server
+npm start
+```
 
 ## 📄 License
 
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For questions or issues:
-1. Check the documentation
-2. Search existing issues
-3. Create a new issue with detailed information
-
-## 🔗 Resources
-
-- [Vite Documentation](https://vitejs.dev/)
-- [React Documentation](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [React Helmet Async](https://github.com/staylor/react-helmet-async)
+This project is private and proprietary to YallaAI.
 
 ---
 
-**Built with ❤️ for the Hebrew-speaking community** 
+Built with ❤️ for the future of education 

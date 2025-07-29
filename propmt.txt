@@ -1,0 +1,92 @@
+You are building a fully responsive, RTL, mobile-first landing page in Next.js + Tailwind CSS.
+
+### 1️⃣ General Rules
+- All copy is **pulled from JSON** only. No hardcoded text anywhere.
+- Use **gender-neutral Hebrew microcopy** (e.g., "שליחה" instead of "שלח").
+- Design with a **futuristic, technological vibe** and smooth animations.
+- Content tone: persuasive but short, with a stronger sales push.
+- Keep **one unified message** (no segmentation by audience in UI).
+- Use **modern microcopy** and emphasize places left instead of countdown timers.
+- Logo & media: use placeholders.
+- Floating sticky CTA button at the bottom of the screen on mobile.
+
+### 2️⃣ RTL Support
+- The entire site is **Right-to-Left** by default.
+- `<html dir="rtl" lang="he">` in `_document.js`.
+- Configure Tailwind with `tailwindcss-rtl` plugin (or logical properties).
+- Text aligned right by default, numbers left-aligned.
+- Use CSS logical properties (`margin-inline-start`, etc.) for safe RTL layouts.
+
+### 3️⃣ Mobile-first Responsive
+- **Design mobile-first** — optimize for small screens first, then scale up.
+- Mobile:
+  - Hero image/video stacked above text.
+  - Navigation collapses into hamburger.
+  - Sticky CTA at bottom viewport.
+  - Form fields stacked, large tap areas.
+- Desktop:
+  - Grid-based layouts for features/testimonials.
+  - Hero: side-by-side text + media.
+- Handle overflow for long Hebrew words.
+
+### 4️⃣ Accessibility
+- All interactive elements have Hebrew `aria-label` or visible labels.
+- WCAG AA color contrast compliance.
+- Full keyboard navigation support.
+- Form inputs linked with labels via `htmlFor`.
+
+### 5️⃣ Colors
+#1b0c3d – Deep navy purple (background dominant)
+#3e2d69 – Dark violet-purple
+#38d273 – Bright green (for “Educators” text)
+#6f56fc – Bright violet (buttons)
+#ffffff – White (text/icons)
+#f6f6f6 – Light gray (secondary backgrounds)
+#f04960 – Bright pinkish-red (badges/highlights)
+#fea500 – Bright orange-yellow (icons/accents)
+#ffdb4c – Yellow-gold (rating stars)
+#141414 – Very dark gray (text/icons)
+
+
+### 6️⃣ Animations
+- Smooth, futuristic hover and scroll animations.
+- Avoid overuse — focus on enhancing key CTA and hero section.
+
+### 7️⃣ Forms & API
+- Forms send data to a **mock API endpoint**.
+- Include inline validation and Hebrew error messages.
+- Show success message after submission.
+
+### 8️⃣ Structure
+- Sections (all text from JSON):
+  1. Hero with headline, subheadline, CTA
+  2. Benefits grid
+  3. Testimonials
+  4. Program details
+  5. FAQ
+  6. Signup form with CTA
+- JSON structure must allow future language swaps.
+- Use modern persuasive microcopy, short and impactful.
+
+### 9️⃣ Technical
+- Next.js + TailwindCSS (with `tailwindcss-rtl`)
+- Use responsive Tailwind utilities (`sm:`, `md:`, `lg:`)
+- Placeholders for logo and media
+- Avoid any inline styles — only Tailwind classes
+
+
+
+site should be white mode, when primary buttons is #633ffb
+secondary buttons should be #09f285
+background is white
+hero background is #130342 
+hero text is white
+site text is #130342 
+no gradient colors effects
+header and footer should be #130342 
+headers should be #130342 
+
+One font for headers - Karantina,  and Assistant for content
+
+fields in form should be (Name, Phone).
+
