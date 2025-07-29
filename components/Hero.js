@@ -94,7 +94,7 @@ export default function Hero() {
             {/* Hero Image */}
             <div className="relative h-96 md:h-[500px] lg:h-[600px]">
               <Image
-                src="/images/hero.svg"
+                src="./images/hero.svg"
                 alt="YallaAI Platform Demo"
                 fill
                 className="object-contain rounded-2xl"
