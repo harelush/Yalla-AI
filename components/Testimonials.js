@@ -119,7 +119,7 @@ export default function Testimonials() {
         >
           <div className="text-center">
                          <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">500+</div>
-             <div className="text-text-dark font-content">מחנכים מרוצים</div>
+             <div className="text-text-dark font-content">תלמידים מרוצים</div>
            </div>
            <div className="text-center">
              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">95%</div>

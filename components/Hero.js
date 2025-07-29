@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import content from '../data/content.json'
 
 export default function Hero() {
@@ -90,27 +91,28 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            {/* Placeholder for hero image/video */}
-                         <div className="relative aspect-video bg-primary/20 rounded-2xl border border-primary/30 overflow-hidden">
-              <div className="absolute inset-0 bg-glass flex items-center justify-center">
-                                 <div className="text-center">
-                   <div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center text-white text-4xl font-bold mb-4 mx-auto animate-pulse-slow">
-                     🚀
-                   </div>
-                   <p className="text-white/80 font-semibold">פלטפורמת YallaAI</p>
-                   <p className="text-white/60 text-sm">דמו אינטראקטיבי</p>
-                 </div>
-              </div>
+            {/* Hero Image */}
+            <div className="relative h-96 md:h-[500px] lg:h-[600px]">
+              <Image
+                src="/images/hero.svg"
+                alt="YallaAI Platform Demo"
+                fill
+                className="object-contain rounded-2xl"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
               
-                             {/* Floating elements */}
-               <div className="absolute top-4 right-4 w-12 h-12 bg-secondary/30 rounded-full animate-float"></div>
-               <div className="absolute bottom-4 left-4 w-8 h-8 bg-primary/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-               <div className="absolute top-1/2 left-4 w-6 h-6 bg-secondary/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+              {/* Optional overlay for better text contrast if needed */}
+                  
+              {/* Floating elements */}
+              <div className="absolute top-4 right-4 w-12 h-12 bg-secondary/30 rounded-full animate-float backdrop-blur-sm"></div>
+              <div className="absolute bottom-4 left-4 w-8 h-8 bg-primary/30 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 left-4 w-6 h-6 bg-secondary/30 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '2s' }}></div>
             </div>
 
-                         {/* Decorative elements */}
-             <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
-             <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/20 rounded-full blur-xl"></div>
+            {/* Decorative elements */}
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/20 rounded-full blur-xl"></div>
           </motion.div>
         </div>
       </div>

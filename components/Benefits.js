@@ -53,21 +53,21 @@ export default function Benefits() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="card group hover:scale-105 transition-all duration-300"
+              className="card group hover:scale-105 transition-all duration-300 text-center"
               whileHover={{ y: -10 }}
             >
               {/* Icon */}
-              <div className="text-5xl mb-4 group-hover:animate-bounce">
+              <div className="text-5xl mb-4 group-hover:animate-bounce text-center">
                 {benefit.icon}
               </div>
 
                              {/* Title */}
-               <h3 className="text-xl font-bold mb-4 text-text-dark group-hover:text-secondary transition-colors font-header">
+               <h3 className="text-2xl font-bold mb-4 text-text-dark group-hover:text-secondary transition-colors font-header text-center">
                  {benefit.title}
                </h3>
 
                {/* Description */}
-               <p className="text-gray-600 leading-relaxed font-content">
+               <p className="text-gray-600 leading-relaxed font-content text-center">
                  {benefit.description}
                </p>
 
