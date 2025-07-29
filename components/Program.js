@@ -72,21 +72,6 @@ export default function Program() {
               ))}
             </motion.div>
 
-            {/* Pricing */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-gray-50 border border-gray-200 rounded-xl p-6"
-            >
-                             <div className="text-3xl font-bold text-primary mb-2 font-header">
-                 {content.program.price}
-               </div>
-               <p className="text-gray-600 text-sm font-content">
-                {content.program.note}
-              </p>
-            </motion.div>
           </motion.div>
 
           {/* Visual Element */}
@@ -97,55 +82,89 @@ export default function Program() {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Main Card */}
-            <div className="card relative overflow-hidden">
-              {/* Header */}
-              <div className="text-center mb-8">
-                                 <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto">
-                   ✨
-                 </div>
-                 <h3 className="text-2xl font-bold text-text-dark mb-2 font-header">תוכנית YallaAI</h3>
-                 <p className="text-gray-600 font-content">הפתרון המושלם למחנכים</p>
-              </div>
-
-              {/* Benefits Icons */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                   <div className="text-2xl mb-2">🎯</div>
-                   <div className="text-sm text-gray-600 font-content">התאמה אישית</div>
-                 </div>
-                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                   <div className="text-2xl mb-2">📊</div>
-                   <div className="text-sm text-gray-600 font-content">ניתוח נתונים</div>
-                 </div>
-                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                   <div className="text-2xl mb-2">⏰</div>
-                   <div className="text-sm text-gray-600 font-content">חיסכון בזמן</div>
-                 </div>
-                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                   <div className="text-2xl mb-2">🎧</div>
-                   <div className="text-sm text-gray-600 font-content">תמיכה 24/7</div>
-                 </div>
-              </div>
-
-              {/* CTA */}
-              <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full btn-primary group"
-                                 aria-label="התחל עם תוכנית YallaAI"
+            {/* Program Cards */}
+            <div className="space-y-6">
+              {/* שיעור ניסיון */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="card relative overflow-hidden border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300"
               >
-                התחילו עכשיו
-                <span className="inline-block transition-transform group-hover:translate-x-1 mr-2">←</span>
-              </button>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-text-dark font-header">שיעור ניסיון</h3>
+                    <p className="text-gray-600 text-sm font-content">הזדמנות להכיר את המערכת</p>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-2xl font-bold text-secondary font-header">₪79</div>
+                    <div className="text-sm text-gray-500">50 דקות</div>
+                  </div>
+                </div>
+              </motion.div>
 
-                             {/* Decorative elements */}
-               <div className="absolute top-4 left-4 w-8 h-8 bg-secondary/20 rounded-full blur-md"></div>
-               <div className="absolute bottom-4 right-4 w-6 h-6 bg-primary/20 rounded-full blur-md"></div>
+              {/* קורס קצר */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="card relative overflow-hidden border-2 border-primary/20 hover:border-primary/40 transition-all duration-300"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-text-dark font-header">קורס קצר</h3>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-2xl font-bold text-primary font-header">₪590</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* קורס מלא */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="card relative overflow-hidden border-2 border-secondary/30 hover:border-secondary/50 transition-all duration-300 bg-gradient-to-br from-secondary/5 to-primary/5"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-text-dark font-header">קורס מלא</h3>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-2xl font-bold text-secondary font-header">₪950</div>
+                  </div>
+                </div>
+                <div className="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded-full font-bold">
+                  הכי פופולרי
+                </div>
+              </motion.div>
+
+              {/* קורס לחיילים משוחררים */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="card relative overflow-hidden border-2 border-green-400/20 hover:border-green-400/40 transition-all duration-300"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-text-dark font-header">קורס לחיילים משוחררים</h3>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-2xl font-bold text-green-500 font-header">₪799</div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
-                         {/* Floating elements */}
-             <div className="absolute -top-6 -right-6 w-12 h-12 bg-secondary/30 rounded-full animate-float"></div>
-             <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-primary/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            {/* Floating elements */}
+            <div className="absolute -top-6 -right-6 w-12 h-12 bg-secondary/30 rounded-full animate-float"></div>
+            <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-primary/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
           </motion.div>
         </div>
       </div>

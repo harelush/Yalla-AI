@@ -10,8 +10,8 @@ export default function Layout({ children }) {
       {/* Navigation */}
       <nav className="bg-hero-bg backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40">
         <div className="container-max">
-          <div className="flex justify-between items-center py-4 px-4 md:px-0">
-            {/* Logo */}
+          <div className="flex items-center py-4 px-4 md:px-0">
+            {/* Logo - Far Left */}
             <div className="flex items-center space-x-reverse space-x-2">
               <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-white font-bold text-xl">
                 Y
@@ -19,8 +19,8 @@ export default function Layout({ children }) {
               <span className="text-xl font-bold text-white font-header">YallaAI</span>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-reverse space-x-8">
+            {/* Desktop Navigation - Left Side */}
+            <div className="hidden md:flex items-center space-x-reverse space-x-8 ml-32 mx-10">
               <Link href="#hero" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.home}
               </Link>
@@ -30,6 +30,13 @@ export default function Layout({ children }) {
               <Link href="#testimonials" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.testimonials}
               </Link>
+            </div>
+
+            {/* Spacer to push contact button to the right */}
+            <div className="flex-1"></div>
+
+            {/* Contact Button - Far Right */}
+            <div className="hidden md:flex">
               <Link href="#contact" className="btn-primary">
                 {content.navigation.contact}
               </Link>
