@@ -46,13 +46,13 @@ export default function Program() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-block bg-gradient-to-r from-secondary to-primary text-white px-6 py-2 rounded-full text-sm font-bold mb-6"
+              className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-lg"
             >
               🎯 בחר את המסלול שלך
             </motion.div>
             
             <h2 className="text-4xl md:text-6xl font-bold mb-6 font-header">
-              <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 {content.program.title}
               </span>
             </h2>
@@ -67,11 +67,11 @@ export default function Program() {
               const getCardStyles = (featured) => {
                 if (featured) {
                   return {
-                    border: 'border-secondary border-4',
-                    background: 'bg-gradient-to-br from-white via-secondary/8 to-secondary/15',
-                    shadow: 'shadow-3xl shadow-secondary/30',
-                    hoverShadow: 'hover:shadow-secondary/50 hover:shadow-4xl',
-                    ring: 'ring-6 ring-secondary/20'
+                    border: 'border-primary border-3',
+                    background: 'bg-gradient-to-br from-white via-primary/6 to-secondary/8',
+                    shadow: 'shadow-2xl shadow-primary/20',
+                    hoverShadow: 'hover:shadow-primary/30 hover:shadow-3xl',
+                    ring: 'ring-4 ring-primary/15'
                   }
                 }
                 return {
@@ -111,7 +111,7 @@ export default function Program() {
                       initial={{ scale: 0, rotate: -10 }}
                       animate={{ scale: 1, rotate: 3 }}
                       transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-                      className="absolute -top-4 -right-4 bg-gradient-to-r from-secondary via-green-400 to-emerald-500 text-white text-base font-bold px-6 py-3 rounded-full shadow-2xl border-3 border-white z-10"
+                      className="absolute -top-4 -right-4 bg-gradient-to-r from-secondary via-primary to-blue-500 text-white text-base font-bold px-6 py-3 rounded-full shadow-2xl border-3 border-white z-10"
                     >
                       🏆 {card.badge}
                     </motion.div>
@@ -123,7 +123,7 @@ export default function Program() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.7, duration: 0.6 }}
-                      className="absolute top-6 left-6 bg-gradient-to-r from-amber-400 to-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-amber-300"
+                      className="absolute top-6 left-6 bg-gradient-to-r from-accent to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-accent/20"
                     >
                       💎 הקורס המומלץ ביותר
                     </motion.div>
@@ -135,7 +135,7 @@ export default function Program() {
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1, type: "spring", stiffness: 150 }}
-                      className="absolute top-20 left-6 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform -rotate-12"
+                      className="absolute top-20 left-6 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform -rotate-12"
                     >
                       🔥 חוסך ₪300+
                     </motion.div>
@@ -175,7 +175,7 @@ export default function Program() {
                       )}
                       
                       <motion.div 
-                        className={`${card.featured ? 'text-7xl md:text-8xl' : 'text-5xl md:text-6xl'} font-bold ${card.featured ? 'text-secondary' : 'text-gray-600'} font-header`}
+                        className={`${card.featured ? 'text-7xl md:text-8xl' : 'text-5xl md:text-6xl'} font-bold ${card.featured ? 'text-primary' : 'text-gray-600'} font-header`}
                         whileHover={{ scale: card.featured ? 1.1 : 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
@@ -183,7 +183,7 @@ export default function Program() {
                       </motion.div>
                       
                       <div className="text-center">
-                        <span className={`text-sm font-semibold px-4 py-2 rounded-full ${card.featured ? 'bg-secondary/15 text-secondary text-base' : 'bg-gray-100 text-gray-600'}`}>
+                        <span className={`text-sm font-semibold px-4 py-2 rounded-full ${card.featured ? 'bg-primary/15 text-primary text-base' : 'bg-gray-100 text-gray-600'}`}>
                           {card.title === "קורס קצר" ? "⚡ בסיסי למתחילים" : "🏆 הקורס המקצועי המלא - הכי שווה!"}
                         </span>
                       </div>
@@ -208,7 +208,7 @@ export default function Program() {
                         w-full ${card.featured ? 'py-6 px-8 text-2xl' : 'py-4 px-6 text-lg'} rounded-2xl font-bold
                         transition-all duration-300 transform
                         ${card.featured 
-                          ? 'bg-gradient-to-r from-secondary via-green-400 to-emerald-500 text-white shadow-2xl shadow-secondary/40 hover:shadow-secondary/60 ring-4 ring-secondary/20' 
+                          ? 'bg-gradient-to-r from-primary via-secondary to-blue-500 text-white shadow-2xl shadow-primary/30 hover:shadow-primary/50 ring-4 ring-primary/15' 
                           : 'bg-gradient-to-r from-gray-400 to-gray-500 text-white shadow-md shadow-gray-400/30 hover:shadow-gray-400/40'
                         }
                         hover:shadow-xl border-2 border-white/20
@@ -225,7 +225,7 @@ export default function Program() {
                   {/* Featured card decorations */}
                   {card.featured && (
                     <>
-                      <div className="absolute -top-3 -right-3 w-8 h-8 bg-secondary rounded-full animate-ping opacity-30"></div>
+                      <div className="absolute -top-3 -right-3 w-8 h-8 bg-primary rounded-full animate-ping opacity-30"></div>
                     </>
                   )}
                 </motion.div>
@@ -249,7 +249,7 @@ export default function Program() {
                   variants={itemVariants}
                   className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
                     <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -263,7 +263,7 @@ export default function Program() {
       </section>
 
       {/* Trial Lesson Section - Compact Entry Point */}
-      <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-secondary/10 via-primary/5 to-secondary/10 border-y border-secondary/20">
+      <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/8 via-secondary/5 to-primary/8 border-y border-primary/15">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -274,7 +274,7 @@ export default function Program() {
           >
             {/* Compact Trial Lesson Presentation */}
             <motion.div
-              className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border-2 border-secondary/20"
+              className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border-2 border-primary/15"
             >
               {/* Badge */}
               <motion.div
@@ -282,7 +282,7 @@ export default function Program() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="inline-block bg-secondary text-white px-6 py-2 rounded-full text-sm font-bold mb-6"
+                className="inline-block bg-primary text-white px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-lg"
               >
                 {content.trialLesson.badge}
               </motion.div>
@@ -295,7 +295,7 @@ export default function Program() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-5xl font-bold mb-4 font-header"
               >
-                <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   {content.trialLesson.headline.main}
                 </span>
                 <br />
@@ -342,7 +342,7 @@ export default function Program() {
                 className="flex flex-col md:flex-row items-center justify-center gap-8 bg-gray-50 rounded-2xl p-6"
               >
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">
+                  <div className="text-4xl md:text-5xl font-bold text-primary mb-2 font-header">
                     {trialLesson?.price}
                   </div>
                   <div className="text-gray-600 font-content text-sm">
@@ -353,7 +353,7 @@ export default function Program() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-secondary to-primary text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 font-header"
+                  className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 font-header"
                 >
                   {content.trialLesson.pricing.cta}
                 </motion.button>

@@ -60,7 +60,7 @@ export default function FloatingCTA() {
            <div className="absolute inset-0 rounded-full bg-primary opacity-75 animate-ping"></div>
            
            {/* Urgent indicator */}
-           <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-white text-xs font-bold animate-bounce">
+           <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center text-white text-xs font-bold animate-bounce">
             !
           </div>
         </motion.button>

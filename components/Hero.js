@@ -34,7 +34,7 @@ export default function Hero() {
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.6, delay: 0.2 }}
-               className="inline-flex items-center bg-secondary/20 text-secondary text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-secondary/30"
+               className="inline-flex items-center bg-secondary/15 text-secondary text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-secondary/25 backdrop-blur-sm"
              >
                🔥 {content.hero.badge}
              </motion.div>
@@ -105,14 +105,14 @@ export default function Hero() {
               {/* Optional overlay for better text contrast if needed */}
                   
               {/* Floating elements */}
-              <div className="absolute top-4 right-4 w-12 h-12 bg-secondary/30 rounded-full animate-float backdrop-blur-sm"></div>
-              <div className="absolute bottom-4 left-4 w-8 h-8 bg-primary/30 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 left-4 w-6 h-6 bg-secondary/30 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute top-4 right-4 w-12 h-12 bg-secondary/20 rounded-full animate-float backdrop-blur-sm border border-secondary/10"></div>
+              <div className="absolute bottom-4 left-4 w-8 h-8 bg-primary/20 rounded-full animate-float backdrop-blur-sm border border-primary/10" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 left-4 w-6 h-6 bg-accent/20 rounded-full animate-float backdrop-blur-sm border border-accent/10" style={{ animationDelay: '2s' }}></div>
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/20 rounded-full blur-xl"></div>
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/15 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/15 rounded-full blur-xl"></div>
           </motion.div>
         </div>
       </div>

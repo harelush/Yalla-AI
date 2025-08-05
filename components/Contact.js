@@ -59,6 +59,7 @@ export default function Contact() {
        <div className="absolute inset-0 opacity-5">
          <div className="absolute top-20 left-20 w-64 h-64 bg-primary rounded-full blur-3xl animate-float"></div>
          <div className="absolute bottom-20 right-20 w-80 h-80 bg-secondary rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+         <div className="absolute top-1/2 right-10 w-32 h-32 bg-accent rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }}></div>
        </div>
 
       <div className="container-max relative z-10">
@@ -76,7 +77,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-flex items-center bg-secondary/20 text-secondary text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-secondary/30 animate-pulse-slow"
+              className="inline-flex items-center bg-secondary/15 text-secondary text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-secondary/25 animate-pulse-slow backdrop-blur-sm"
             >
               ⚡ {content.cta.urgent}
             </motion.div>

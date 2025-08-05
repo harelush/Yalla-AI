@@ -8,11 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#633ffb',
-        'secondary': '#09f285',
-        'hero-bg': '#130342',
-        'text-dark': '#130342',
+        'primary': '#1E40AF',        // Modern sophisticated blue
+        'secondary': '#0EA5E9',      // Electric cyan for innovation
+        'accent': '#F97316',         // Warm orange for human connection
+        'hero-bg': '#0F172A',        // Modern deep slate
+        'text-dark': '#1E293B',      // Professional dark slate
         'white': '#ffffff',
+        'surface': '#F8FAFC',        // Subtle off-white
+        'neutral': '#64748B',        // Modern neutral gray
       },
       fontFamily: {
         'header': ['Karantina', 'system-ui', '-apple-system', 'sans-serif'],

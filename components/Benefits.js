@@ -23,7 +23,7 @@ export default function Benefits() {
   }
 
   return (
-    <section id="benefits" className="py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="benefits" className="py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-surface">
       <div className="container-max">
         {/* Section Header */}
         <motion.div
@@ -62,7 +62,7 @@ export default function Benefits() {
               </div>
 
                              {/* Title */}
-               <h3 className="text-2xl font-bold mb-4 text-text-dark group-hover:text-secondary transition-colors font-header text-center">
+               <h3 className="text-2xl font-bold mb-4 text-text-dark group-hover:text-primary transition-colors font-header text-center">
                  {benefit.title}
                </h3>
 
@@ -72,7 +72,7 @@ export default function Benefits() {
                </p>
 
                {/* Hover effect overlay */}
-               <div className="absolute inset-0 bg-secondary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+               <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </motion.div>
           ))}
         </motion.div>
