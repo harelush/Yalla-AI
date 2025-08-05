@@ -40,9 +40,6 @@ export default function Home() {
       {/* Benefits Section */}
       <Benefits />
 
-      {/* Testimonials Section */}
-      <Testimonials />
-
       {/* Program Details Section */}
       <Program />
 
@@ -51,6 +48,9 @@ export default function Home() {
 
       {/* Contact/CTA Section */}
       <Contact />
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Floating CTA for Mobile */}
       <FloatingCTA />
