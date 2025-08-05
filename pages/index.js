@@ -8,6 +8,7 @@ import FAQ from '../components/FAQ'
 import Contact from '../components/Contact'
 import FloatingCTA from '../components/FloatingCTA'
 import SuccessStories from '../components/SuccessStories'
+import About from '../components/About'
 
 export default function Home() {
   useEffect(() => {
@@ -43,6 +44,9 @@ export default function Home() {
 
       {/* Success Stories Videos */}
       <SuccessStories />
+
+      {/* About Course & Team Section */}
+      <About />
 
       {/* Program Details Section */}
       <Program />

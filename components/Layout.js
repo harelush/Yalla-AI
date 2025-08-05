@@ -24,6 +24,9 @@ export default function Layout({ children }) {
               <Link href="#hero" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.home}
               </Link>
+              <Link href="#about" className="text-white hover:text-secondary transition-colors">
+                {content.navigation.about}
+              </Link>
               <Link href="#benefits" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.features}
               </Link>
@@ -64,6 +67,9 @@ export default function Layout({ children }) {
               <div className="flex flex-col space-y-4">
                 <Link href="#hero" className="text-white hover:text-secondary transition-colors py-2">
                   {content.navigation.home}
+                </Link>
+                <Link href="#about" className="text-white hover:text-secondary transition-colors py-2">
+                  {content.navigation.about}
                 </Link>
                 <Link href="#benefits" className="text-white hover:text-secondary transition-colors py-2">
                   {content.navigation.features}
