@@ -189,6 +189,28 @@
     "contact": "יצירת קשר",
     "menu": "תפריט"
   },
+  "successStories": {
+    "title": "רואים את התוצאות בפועל",
+    "subtitle": "צפו באנשים אמיתיים שהשתמשו בכלי AI ושינו את חייהם המקצועיים לחלוטין",
+    "badge": "סיפורי הצלחה אמיתיים",
+    "videos": [
+      {
+        "url": "https://www.youtube.com/embed/S-mWgl8ImVc",
+        "title": "סיפור הצלחה ראשון",
+        "caption": "💡 איך AI שינה את הקריירה שלו"
+      },
+      {
+        "url": "https://www.youtube.com/embed/wH60oiCODhg",
+        "title": "סיפור הצלחה שני", 
+        "caption": "🚀 מהתחלה חדשה להצלחה מסחררת"
+      }
+    ],
+    "cta": {
+      "title": "גם אתם יכולים להגשים את החלום שלכם!",
+      "subtitle": "הצטרפו לאלפי אנשים שכבר שינו את חייהם בעזרת AI",
+      "button": "רוצה להיות הבא בתור?"
+    }
+  },
   "footer": {
     "rights": "© 2025 YallaAI. כל הזכויות שמורות.",
     "privacy": "מדיניות פרטיות",

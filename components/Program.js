@@ -328,7 +328,7 @@ export default function Program() {
                     className="text-center"
                   >
                     <div className="text-2xl mb-2">{benefit.icon}</div>
-                    <h4 className="font-bold text-text-dark text-sm mb-1 font-header">{benefit.title}</h4>
+                    <h4 className="font-medium text-text-dark text-xl mb-1 font-header">{benefit.title}</h4>
                   </motion.div>
                 ))}
               </motion.div>
