@@ -40,7 +40,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="section-padding bg-gray-50">
+    <section id="testimonials" className="py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="container-max">
         {/* Section Header */}
         <motion.div

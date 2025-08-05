@@ -54,7 +54,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-white relative overflow-hidden">
+    <section id="contact" className="py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
              {/* Background decoration */}
        <div className="absolute inset-0 opacity-5">
          <div className="absolute top-20 left-20 w-64 h-64 bg-primary rounded-full blur-3xl animate-float"></div>

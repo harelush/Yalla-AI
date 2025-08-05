@@ -31,7 +31,7 @@ export default function Program() {
   return (
     <>
       {/* Main Program Section - Lead with Main Courses */}
-      <section id="program" className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section id="program" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
         <div className="container-max">
           {/* Section Header */}
           <motion.div
@@ -39,7 +39,7 @@ export default function Program() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -62,7 +62,7 @@ export default function Program() {
           </motion.div>
 
           {/* Main Courses Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
             {mainCourses.map((card, index) => {
               const getCardStyles = (featured) => {
                 if (featured) {
@@ -239,9 +239,9 @@ export default function Program() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
-            <h3 className="text-3xl font-bold text-text-dark mb-8 font-header">✨ מה תקבלו בכל קורס?</h3>
+            <h3 className="text-3xl font-bold text-text-dark mb-6 font-header">✨ מה תקבלו בכל קורס?</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
               {content.program.features.map((feature, index) => (
                 <motion.div
@@ -263,7 +263,7 @@ export default function Program() {
       </section>
 
       {/* Trial Lesson Section - Compact Entry Point */}
-      <section className="section-padding bg-gradient-to-r from-secondary/10 via-primary/5 to-secondary/10 border-y border-secondary/20">
+      <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-secondary/10 via-primary/5 to-secondary/10 border-y border-secondary/20">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

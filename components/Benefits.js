@@ -23,7 +23,7 @@ export default function Benefits() {
   }
 
   return (
-    <section id="benefits" className="section-padding bg-white">
+    <section id="benefits" className="py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container-max">
         {/* Section Header */}
         <motion.div
