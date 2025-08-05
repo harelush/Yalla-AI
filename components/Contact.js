@@ -10,43 +10,98 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState('')
   const [messageType, setMessageType] = useState('')
+  const [validationErrors, setValidationErrors] = useState({
+    name: '',
+    phone: ''
+  })
+
+  // Validation functions
+  const validateName = (name) => {
+    if (!name.trim()) {
+      return 'שם הוא שדה חובה'
+    }
+    if (name.trim().length < 2) {
+      return 'שם חייב להכיל לפחות 2 תווים'
+    }
+    return ''
+  }
+
+  const validatePhone = (phone) => {
+    if (!phone.trim()) {
+      return 'מספר טלפון הוא שדה חובה'
+    }
+    
+    // Israeli phone number regex (supports various formats)
+    // Supports: 050-1234567, 0501234567, 050 1234567, etc.
+    const israeliPhoneRegex = /^0(5[0-9]|2|3|4|7|8|9)-?\s?[0-9]{7}$/
+    
+    if (!israeliPhoneRegex.test(phone.replace(/\s+/g, ''))) {
+      return 'מספר טלפון לא תקין (דוגמה: 050-1234567)'
+    }
+    return ''
+  }
 
   const handleChange = (e) => {
+    const { name, value } = e.target
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     })
+
+    // Clear validation error when user starts typing
+    if (validationErrors[name]) {
+      setValidationErrors({
+        ...validationErrors,
+        [name]: ''
+      })
+    }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsSubmitting(true)
     setMessage('')
 
+    // Validate form
+    const nameError = validateName(formData.name)
+    const phoneError = validatePhone(formData.phone)
+
+    if (nameError || phoneError) {
+      setValidationErrors({
+        name: nameError,
+        phone: phoneError
+      })
+      return
+    }
+
+    // Clear any previous validation errors
+    setValidationErrors({
+      name: '',
+      phone: ''
+    })
+
+    setIsSubmitting(true)
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwPqpncgnHpINrf8Gkry1MjPvDi0_MTkkqWD6ZhQo0jgVOxh5nwHufPYHHHos1_l8YSrg/exec', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        mode: 'no-cors',
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone
+        }),
       })
 
-      const result = await response.json()
-
-      if (response.ok) {
-        setMessage(result.message)
-        setMessageType('success')
-        setFormData({
-          name: '',
-          phone: ''
-        })
-      } else {
-        setMessage(result.message)
-        setMessageType('error')
-      }
+      // With no-cors mode, we can't read the response, but if no error is thrown, it likely succeeded
+      setMessage('תודה! נחזור אליכם בהקדם האפשרי')
+      setMessageType('success')
+      setFormData({
+        name: '',
+        phone: ''
+      })
     } catch (error) {
-      setMessage(content.cta.form.error)
+      console.error('Form submission error:', error)
+      setMessage('אירעה שגיאה ברשת, אנא נסו שנית')
       setMessageType('error')
     } finally {
       setIsSubmitting(false)
@@ -140,9 +195,16 @@ export default function Contact() {
                    value={formData.name}
                    onChange={handleChange}
                    required
-                   className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-content"
+                   className={`w-full px-4 py-3 bg-white border rounded-lg text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all font-content ${
+                     validationErrors.name 
+                       ? 'border-red-500 focus:ring-red-500' 
+                       : 'border-gray-300 focus:ring-primary'
+                   }`}
                    placeholder={content.cta.form.name_placeholder}
                  />
+                 {validationErrors.name && (
+                   <p className="mt-1 text-sm text-red-600">{validationErrors.name}</p>
+                 )}
                </div>
 
                {/* Phone */}
@@ -157,9 +219,16 @@ export default function Contact() {
                    value={formData.phone}
                    onChange={handleChange}
                    required
-                   className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-content"
+                   className={`w-full px-4 py-3 bg-white border rounded-lg text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all font-content ${
+                     validationErrors.phone 
+                       ? 'border-red-500 focus:ring-red-500' 
+                       : 'border-gray-300 focus:ring-primary'
+                   }`}
                    placeholder={content.cta.form.phone_placeholder}
                  />
+                 {validationErrors.phone && (
+                   <p className="mt-1 text-sm text-red-600">{validationErrors.phone}</p>
+                 )}
                </div>
 
               {/* Submit Button */}

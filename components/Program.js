@@ -250,7 +250,7 @@ export default function Program() {
                         hover:shadow-xl border-2 border-white/20
                       `}
                     >
-                      {card.featured ? 'רוצה להיות חלק - זה בשבילי!' : 'מתחיל עם הבסיס'}
+                      {card.featured ? 'רוצה להיות חלק - זה בשבילי!' : 'אתחיל עםהבסיס'}
                     </motion.button>
                   </div>
 
