@@ -97,7 +97,7 @@ export default function Contact() {
                 'הצטרפות מיידית לפלטפורמה',
                 'הדרכה אישית מקצועית',
                 'תמיכה טכנית מלאה',
-                'גישה לקהילת המחנכים'
+                'גישה לקהילת הבוגרים'
               ].map((benefit, index) => (
                 <motion.div
                   key={index}

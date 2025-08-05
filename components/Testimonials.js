@@ -118,16 +118,16 @@ export default function Testimonials() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-bright-violet/20"
         >
           <div className="text-center">
-                         <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">500+</div>
-             <div className="text-text-dark font-content">תלמידים מרוצים</div>
+                         <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">350</div>
+             <div className="text-text-dark font-content">תלמידים מרוצים ביוני 2025</div>
            </div>
            <div className="text-center">
              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">95%</div>
-             <div className="text-text-dark font-content">שיפור בביצועים</div>
+             <div className="text-text-dark font-content">ימליצו לחברים שלנם</div>
            </div>
            <div className="text-center">
-             <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">50%</div>
-             <div className="text-text-dark font-content">חיסכון בזמן</div>
+             <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">100%</div>
+             <div className="text-text-dark font-content">התייעלות ושימוש בכלים טכנולוגיים חדשים</div>
            </div>
         </motion.div>
       </div>

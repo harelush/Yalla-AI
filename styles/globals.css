@@ -84,6 +84,34 @@
   .animate-slide-up {
     animation: slideUp 0.6s ease-out;
   }
+
+  /* Enhanced card hover effects */
+  .hover\\:shadow-3xl:hover {
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Enhanced scale effects */
+  .hover\\:scale-103:hover {
+    transform: scale(1.03);
+  }
+
+  /* Glass morphism effect */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Premium card gradient borders */
+  .premium-border {
+    background: linear-gradient(135deg, rgba(99, 63, 251, 0.1), rgba(9, 242, 133, 0.1));
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /* Floating animation for decorative elements */
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
 }
 
 @keyframes fadeIn {
