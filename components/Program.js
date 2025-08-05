@@ -194,7 +194,7 @@ export default function Program() {
                             💰 כולל הכל: קורס קצר + 4 מפגשים מתקדמים
                           </p>
                           <p className="text-green-600 text-xs mt-1">
-                            במקום לקנות בנפרד (₪590 + ₪660) = ₪1,250
+                           הנחה בלעדית לזמן מוגבל!
                           </p>
                         </div>
                       )}
@@ -214,7 +214,7 @@ export default function Program() {
                         hover:shadow-xl border-2 border-white/20
                       `}
                     >
-                      {card.featured ? '🏆 רוצה להיות מקצועי - זה בשבילי!' : '📚 מתחיל עם הבסיס'}
+                      {card.featured ? '🏆 רוצה להיות חלק - זה בשבילי!' : '📚 מתחיל עם הבסיס'}
                     </motion.button>
                   </div>
 
