@@ -18,17 +18,17 @@ export default function Contact() {
   // Validation functions
   const validateName = (name) => {
     if (!name.trim()) {
-      return 'שם הוא שדה חובה'
+      return content.ui.contact.validation.name_required
     }
     if (name.trim().length < 2) {
-      return 'שם חייב להכיל לפחות 2 תווים'
+      return content.ui.contact.validation.name_min_length
     }
     return ''
   }
 
   const validatePhone = (phone) => {
     if (!phone.trim()) {
-      return 'מספר טלפון הוא שדה חובה'
+      return content.ui.contact.validation.phone_required
     }
     
     // Israeli phone number regex (supports various formats)
@@ -36,7 +36,7 @@ export default function Contact() {
     const israeliPhoneRegex = /^0(5[0-9]|2|3|4|7|8|9)-?\s?[0-9]{7}$/
     
     if (!israeliPhoneRegex.test(phone.replace(/\s+/g, ''))) {
-      return 'מספר טלפון לא תקין (דוגמה: 050-1234567)'
+      return content.ui.contact.validation.phone_invalid
     }
     return ''
   }
@@ -93,7 +93,7 @@ export default function Contact() {
       })
 
       // With no-cors mode, we can't read the response, but if no error is thrown, it likely succeeded
-      setMessage('תודה! נחזור אליכם בהקדם האפשרי')
+      setMessage(content.ui.contact.messages.success)
       setMessageType('success')
       setFormData({
         name: '',
@@ -101,7 +101,7 @@ export default function Contact() {
       })
     } catch (error) {
       console.error('Form submission error:', error)
-      setMessage('אירעה שגיאה ברשת, אנא נסו שנית')
+      setMessage(content.ui.contact.messages.error)
       setMessageType('error')
     } finally {
       setIsSubmitting(false)
@@ -149,12 +149,7 @@ export default function Contact() {
 
             {/* Benefits list */}
             <div className="space-y-4">
-              {[
-                'הצטרפות מיידית לפלטפורמה',
-                'הדרכה אישית מקצועית',
-                'תמיכה טכנית מלאה',
-                'גישה לקהילת הבוגרים'
-              ].map((benefit, index) => (
+              {content.ui.contact.benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: 30 }}
@@ -238,7 +233,7 @@ export default function Contact() {
                 className="w-full btn-primary text-lg group disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="שלח טופס יצירת קשר"
               >
-                {isSubmitting ? 'שולח...' : content.cta.form.submit}
+                {isSubmitting ? content.ui.contact.messages.submitting : content.cta.form.submit}
                 {!isSubmitting && (
                   <span className="inline-block transition-transform group-hover:translate-x-1 mr-2">←</span>
                 )}

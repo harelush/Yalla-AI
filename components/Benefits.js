@@ -90,7 +90,7 @@ export default function Benefits() {
             className="btn-primary text-lg group"
             aria-label="התחל עם YallaAI"
           >
-            גלו איך זה עובד
+            {content.ui.benefits.cta_button}
             <span className="inline-block transition-transform group-hover:translate-x-1 mr-2">←</span>
           </button>
         </motion.div>

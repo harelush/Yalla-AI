@@ -2,6 +2,10 @@ import { motion } from 'framer-motion'
 import content from '../data/content.json'
 
 export default function Program() {
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -48,7 +52,7 @@ export default function Program() {
               viewport={{ once: true }}
               className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-lg"
             >
-בחר את המסלול שלך
+{content.ui.program.course_selector}
             </motion.div>
             
             <h2 className="text-4xl md:text-6xl font-bold mb-6 font-header">
@@ -125,7 +129,7 @@ export default function Program() {
                       transition={{ delay: 0.7, duration: 0.6 }}
                       className="absolute top-6 left-6 bg-gradient-to-r from-accent to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-accent/20"
                     >
-                      💎 הקורס המומלץ ביותר
+                      {content.ui.program.badges.most_recommended}
                     </motion.div>
                   )}
 
@@ -137,7 +141,7 @@ export default function Program() {
                       transition={{ delay: 1, type: "spring", stiffness: 150 }}
                       className="absolute top-20 left-6 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform -rotate-12"
                     >
-                      🔥 חוסך ₪300+
+                      {content.ui.program.badges.saves_money}
                     </motion.div>
                   )}
 
@@ -174,7 +178,7 @@ export default function Program() {
                       {/* Highlights */}
                       {card.highlights && (
                         <div className="space-y-2 mb-4">
-                          <h4 className="text-base font-semibold text-gray-800 text-center mb-3">מה כלול בקורס:</h4>
+                          <h4 className="text-base font-semibold text-gray-800 text-center mb-3">{content.ui.program.course_content_title}</h4>
                           <div className="space-y-1">
                             {card.highlights.map((highlight, idx) => (
                               <motion.div
@@ -195,7 +199,7 @@ export default function Program() {
                       {!card.featured && (
                         <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
                           <p className="text-amber-700 text-sm">
-                            <strong>רוצה יותר?</strong> הקורס המלא כולל את כל זה + עוד הרבה תוכן מתקדם
+                            {content.ui.program.upgrade_note}
                           </p>
                         </div>
                       )}
@@ -205,8 +209,8 @@ export default function Program() {
                     <div className="text-center space-y-4">
                       {card.featured && (
                         <div className="mb-4">
-                          <span className="text-lg text-gray-500 line-through">₪1,250</span>
-                          <span className="text-red-500 font-bold text-sm mr-2">חסכת ₪300!</span>
+                          <span className="text-lg text-gray-500 line-through">{content.ui.program.pricing.old_price}</span>
+                          <span className="text-red-500 font-bold text-sm mr-2">{content.ui.program.pricing.savings}</span>
                         </div>
                       )}
                       
@@ -220,17 +224,17 @@ export default function Program() {
                       
                       <div className="text-center">
                         <span className={`text-sm font-semibold px-4 py-2 rounded-full ${card.featured ? 'bg-primary/15 text-primary text-base' : 'bg-gray-100 text-gray-600'}`}>
-                          {card.title === "קורס קצר" ? "בסיסי למתחילים" : "הקורס המקצועי המלא - הכי שווה!"}
+                          {card.title === "קורס קצר" ? content.ui.program.pricing.basic_description : content.ui.program.pricing.full_description}
                         </span>
                       </div>
                       
                       {card.featured && (
                         <div className="bg-green-50 border border-green-200 rounded-lg p-3 mt-4">
                           <p className="text-green-700 text-sm font-semibold">
-                            💰 כולל הכל: קורס קצר + 4 מפגשים מתקדמים
+                            {content.ui.program.pricing.full_course_includes}
                           </p>
                           <p className="text-green-600 text-xs mt-1">
-                           הנחה בלעדית לזמן מוגבל!
+                           {content.ui.program.pricing.limited_discount}
                           </p>
                         </div>
                       )}
@@ -238,6 +242,7 @@ export default function Program() {
 
                     {/* CTA Button */}
                     <motion.button
+                      onClick={scrollToContact}
                       whileHover={{ scale: card.featured ? 1.08 : 1.03 }}
                       whileTap={{ scale: 0.95 }}
                       className={`
@@ -249,8 +254,9 @@ export default function Program() {
                         }
                         hover:shadow-xl border-2 border-white/20
                       `}
+                      aria-label={card.featured ? "רוצה להיות חלק - זה בשבילי" : "אתחיל עם הבסיס"}
                     >
-                      {card.featured ? 'רוצה להיות חלק - זה בשבילי!' : 'אתחיל עםהבסיס'}
+                      {card.featured ? content.ui.program.buttons.featured_course : content.ui.program.buttons.basic_course}
                     </motion.button>
                   </div>
 
@@ -277,7 +283,7 @@ export default function Program() {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h3 className="text-3xl font-bold text-text-dark mb-6 font-header">מה כלול בכל קורס?</h3>
+            <h3 className="text-3xl font-bold text-text-dark mb-6 font-header">{content.ui.program.features_title}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
               {content.program.features.map((feature, index) => (
                 <motion.div
@@ -387,9 +393,11 @@ export default function Program() {
                 </div>
                 
                 <motion.button
+                  onClick={scrollToContact}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 font-header"
+                  aria-label="אני בפנים - שמרו לי מקום"
                 >
                   {content.trialLesson.pricing.cta}
                 </motion.button>

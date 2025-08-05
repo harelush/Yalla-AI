@@ -118,16 +118,16 @@ export default function Testimonials() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-bright-violet/20"
         >
           <div className="text-center">
-                         <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">350</div>
-             <div className="text-text-dark font-content">תלמידים מרוצים ביוני 2025</div>
+                         <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">{content.ui.testimonials.statistics.students.number}</div>
+             <div className="text-text-dark font-content">{content.ui.testimonials.statistics.students.description}</div>
            </div>
            <div className="text-center">
-             <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">95%</div>
-             <div className="text-text-dark font-content">ימליצו לחברים שלנם</div>
+             <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">{content.ui.testimonials.statistics.recommendation.number}</div>
+             <div className="text-text-dark font-content">{content.ui.testimonials.statistics.recommendation.description}</div>
            </div>
            <div className="text-center">
-             <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">100%</div>
-             <div className="text-text-dark font-content">התייעלות ושימוש בכלים טכנולוגיים חדשים</div>
+             <div className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-header">{content.ui.testimonials.statistics.efficiency.number}</div>
+             <div className="text-text-dark font-content">{content.ui.testimonials.statistics.efficiency.description}</div>
            </div>
         </motion.div>
       </div>

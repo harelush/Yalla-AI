@@ -50,7 +50,7 @@ export default function FloatingCTA() {
         >
           {/* Button content */}
           <div className="flex items-center space-x-reverse space-x-2">
-            <span className="font-semibold text-sm">הרשמה מהירה</span>
+            <span className="font-semibold text-sm">{content.ui.floating_cta.quick_signup}</span>
             <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
               <span className="text-xs transition-transform group-hover:translate-x-1">←</span>
             </div>

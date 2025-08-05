@@ -112,13 +112,13 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-                     <p className="text-text-dark mb-6 font-content">יש לכם שאלה נוספת?</p>
+                     <p className="text-text-dark mb-6 font-content">{content.ui.faq.additional_question}</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="btn-secondary group"
             aria-label="יצירת קשר לשאלות נוספות"
           >
-            צרו קשר איתנו
+            {content.ui.faq.contact_button}
             <span className="inline-block transition-transform group-hover:translate-x-1 mr-2">←</span>
           </button>
         </motion.div>
