@@ -48,7 +48,7 @@ export default function Program() {
               viewport={{ once: true }}
               className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-lg"
             >
-              🎯 בחר את המסלול שלך
+בחר את המסלול שלך
             </motion.div>
             
             <h2 className="text-4xl md:text-6xl font-bold mb-6 font-header">
@@ -152,14 +152,50 @@ export default function Program() {
                         {card.title}
                       </motion.h3>
                       
-                      <p className={`text-lg font-content leading-relaxed ${card.featured ? 'text-gray-700' : 'text-gray-500'}`}>
+                      <p className={`text-lg font-content leading-relaxed ${card.featured ? 'text-gray-700' : 'text-gray-500'} mb-4`}>
                         {card.description}
                       </p>
+                      
+                      {/* Duration Info */}
+                      {card.duration && (
+                        <div className="flex items-center justify-center gap-2 mb-4 text-xs">
+                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md font-medium">
+                            {card.duration}
+                          </span>
+                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded-md font-medium">
+                            {card.frequency}
+                          </span>
+                          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-md font-medium">
+                            {card.timeframe}
+                          </span>
+                        </div>
+                      )}
+
+                      {/* Highlights */}
+                      {card.highlights && (
+                        <div className="space-y-2 mb-4">
+                          <h4 className="text-base font-semibold text-gray-800 text-center mb-3">מה כלול בקורס:</h4>
+                          <div className="space-y-1">
+                            {card.highlights.map((highlight, idx) => (
+                              <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50/80 rounded-md p-2"
+                              >
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="flex-1">{highlight}</div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                       
                       {!card.featured && (
                         <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
                           <p className="text-amber-700 text-sm">
-                            💡 <strong>רוצה יותר?</strong> הקורס המלא כולל את כל זה + עוד הרבה תוכן מתקדם
+                            <strong>רוצה יותר?</strong> הקורס המלא כולל את כל זה + עוד הרבה תוכן מתקדם
                           </p>
                         </div>
                       )}
@@ -184,7 +220,7 @@ export default function Program() {
                       
                       <div className="text-center">
                         <span className={`text-sm font-semibold px-4 py-2 rounded-full ${card.featured ? 'bg-primary/15 text-primary text-base' : 'bg-gray-100 text-gray-600'}`}>
-                          {card.title === "קורס קצר" ? "⚡ בסיסי למתחילים" : "🏆 הקורס המקצועי המלא - הכי שווה!"}
+                          {card.title === "קורס קצר" ? "בסיסי למתחילים" : "הקורס המקצועי המלא - הכי שווה!"}
                         </span>
                       </div>
                       
@@ -214,7 +250,7 @@ export default function Program() {
                         hover:shadow-xl border-2 border-white/20
                       `}
                     >
-                      {card.featured ? '🏆 רוצה להיות חלק - זה בשבילי!' : '📚 מתחיל עם הבסיס'}
+                      {card.featured ? 'רוצה להיות חלק - זה בשבילי!' : 'מתחיל עם הבסיס'}
                     </motion.button>
                   </div>
 
@@ -241,7 +277,7 @@ export default function Program() {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h3 className="text-3xl font-bold text-text-dark mb-6 font-header">✨ מה תקבלו בכל קורס?</h3>
+            <h3 className="text-3xl font-bold text-text-dark mb-6 font-header">מה כלול בכל קורס?</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
               {content.program.features.map((feature, index) => (
                 <motion.div
