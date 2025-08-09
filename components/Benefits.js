@@ -23,7 +23,7 @@ export default function Benefits() {
   }
 
   return (
-    <section id="benefits" className="py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-surface">
+    <section id="benefits" className="py-4 md:py-14 px-4 sm:px-6 lg:px-8 bg-surface">
       <div className="container-max">
         {/* Section Header */}
         <motion.div
@@ -31,9 +31,9 @@ export default function Benefits() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6 md:mb-16"
         >
-                     <h2 className="text-5xl md:text-6xl font-bold mb-6 font-header">
+                     <h2 className="text-5xl md:text-6xl font-bold mb-4 md:mb-6 font-header">
              <span className="header-text">{content.benefits.title}</span>
            </h2>
         </motion.div>
@@ -44,7 +44,7 @@ export default function Benefits() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8"
         >
           {content.benefits.items.map((benefit, index) => (
             <motion.div
@@ -80,7 +80,7 @@ export default function Benefits() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-6 md:mt-16"
         >
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
