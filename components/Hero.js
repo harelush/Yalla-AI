@@ -46,7 +46,20 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
                              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-header"
             >
-                             <span className="text-white text-shadow">{content.hero.headline}</span>
+              <span className="text-white text-shadow">
+                {/* Mobile: line break after בעצמך, Desktop: no break */}
+                <span className="block md:hidden">
+                  {content.hero.headline.replace('בעצמך ', 'בעצמך\n').split('\n').map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      {index === 0 && <br />}
+                    </span>
+                  ))}
+                </span>
+                <span className="hidden md:block">
+                  {content.hero.headline}
+                </span>
+              </span>
             </motion.h1>
 
             {/* Subheadline */}
