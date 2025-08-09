@@ -8,15 +8,16 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-hero-bg backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40">
-        <div className="container-max">
-          <div className="flex items-center py-4 px-4 md:px-0">
+      <nav className="bg-hero-bg backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40 h-20">
+        <div className="container-max h-full">
+          <div className="flex items-center h-full px-4 md:px-0">
             {/* Logo - Far Left */}
-            <div className="flex items-center space-x-reverse space-x-2">
-              <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                Y
-              </div>
-              <span className="text-xl font-bold text-white font-header">YallaAI</span>
+            <div className="flex items-center">
+              <img 
+                src="/images/darkmode_logo.svg" 
+                alt="YallaAI" 
+                className="h-32 w-auto"
+              />
             </div>
 
             {/* Desktop Navigation - Left Side */}
@@ -95,11 +96,12 @@ export default function Layout({ children }) {
       <footer className="bg-hero-bg border-t border-gray-200 mt-16">
         <div className="container-max section-padding">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-reverse space-x-2 mb-4">
-              <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center text-white font-bold">
-                Y
-              </div>
-              <span className="text-lg font-bold text-white font-header">YallaAI</span>
+            <div className="flex items-center justify-center mb-4">
+              <img 
+                src="/images/darkmode_logo.svg" 
+                alt="YallaAI" 
+                className="h-24 w-auto"
+              />
             </div>
             <p className="text-gray-300 mb-4">{content.footer.rights}</p>
             <div className="flex justify-center space-x-reverse space-x-6 text-sm text-gray-300">

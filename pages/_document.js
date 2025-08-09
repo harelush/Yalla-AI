@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html dir="rtl" lang="he">
       <Head>
+        <link rel="icon" href="/images/robot.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link 
