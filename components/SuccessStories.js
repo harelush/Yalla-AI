@@ -3,7 +3,7 @@ import { useState } from 'react'
 import content from '../data/content.json'
 
 export default function SuccessStories() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(1) // Start from middle video (index 1)
   const videos = content.successStories.videos
 
   const containerVariants = {
@@ -76,11 +76,14 @@ export default function SuccessStories() {
             viewport={{ once: true }}
             className="relative max-w-sm mx-auto"
           >
-            {/* Carousel Container */}
+            {/* Simple Video Container - URL switching */}
             <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-2">
               <motion.div
-                className="flex transition-transform duration-300 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                key={currentSlide}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.3 }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
@@ -93,56 +96,58 @@ export default function SuccessStories() {
                   }
                 }}
               >
-                {videos.map((video, index) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <div className="relative pb-[125%] h-0 overflow-hidden rounded-xl max-h-[400px]">
-                      <iframe
-                        src={video.url}
-                        title={video.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="absolute top-0 left-0 w-full h-full"
-                      ></iframe>
-                    </div>
-                  </div>
-                ))}
+                <div className="relative pb-[125%] h-0 overflow-hidden rounded-xl max-h-[400px]">
+                  <iframe
+                    src={videos[currentSlide].url}
+                    title={videos[currentSlide].title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full"
+                    loading="lazy"
+                  ></iframe>
+                </div>
               </motion.div>
             </div>
 
-            {/* Navigation Arrows - RTL: Right arrow goes to previous, Left arrow goes to next */}
+            {/* Navigation Arrows - RTL: Right arrow goes to next (more intuitive), Left arrow goes to previous */}
             <button
-              onClick={nextSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors z-10"
-              disabled={currentSlide === videos.length - 1}
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
+              disabled={currentSlide === 0}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button
-              onClick={prevSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors z-10"
-              disabled={currentSlide === 0}
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
+              disabled={currentSlide === videos.length - 1}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
 
-            {/* Dots Indicator */}
-            <div className="flex justify-center mt-4 space-x-2">
-              {videos.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide 
-                      ? 'bg-primary' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
+            {/* Dots Indicator - RTL: rightmost dot = first video */}
+            <div className="flex justify-center mt-4 space-x-reverse space-x-2">
+              {videos.map((_, index) => {
+                // Reverse the index for RTL display (rightmost dot = index 0)
+                const reversedIndex = videos.length - 1 - index
+                return (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(reversedIndex)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      reversedIndex === currentSlide 
+                        ? 'bg-primary' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`עבור לסרטון ${reversedIndex + 1}`}
+                  />
+                )
+              })}
             </div>
 
             {/* Video Caption */}
