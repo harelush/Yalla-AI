@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden max-w-full">
       {/* Navigation */}
       <nav className="bg-hero-bg backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40 h-20">
         <div className="container-max h-full">
@@ -21,7 +21,7 @@ export default function Layout({ children }) {
             </div>
 
             {/* Desktop Navigation - Left Side */}
-            <div className="hidden md:flex items-center space-x-reverse space-x-8 ml-32 mx-10">
+            <div className="hidden md:flex items-center space-x-reverse space-x-8 ml-8 md:ml-16 lg:ml-32 mx-4 md:mx-10">
               <Link href="#hero" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.home}
               </Link>
@@ -88,7 +88,7 @@ export default function Layout({ children }) {
       </nav>
 
       {/* Main Content */}
-      <main>
+      <main className="overflow-x-hidden max-w-full">
         {children}
       </main>
 
