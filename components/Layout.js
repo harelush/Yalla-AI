@@ -103,10 +103,10 @@ export default function Layout({ children }) {
             </div>
             <p className="text-gray-300 mb-4">{content.footer.rights}</p>
             <div className="flex justify-center space-x-reverse space-x-6 text-sm text-gray-300">
-              <Link href="#" className="hover:text-secondary transition-colors">
+              <Link href="/privacy" className="hover:text-secondary transition-colors">
                 {content.footer.privacy}
               </Link>
-              <Link href="#" className="hover:text-secondary transition-colors">
+              <Link href="/terms" className="hover:text-secondary transition-colors">
                 {content.footer.terms}
               </Link>
             </div>
