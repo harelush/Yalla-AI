@@ -54,10 +54,6 @@ export default function About() {
 
           {/* Team Members in a unified layout */}
           <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-text-dark font-header text-center">
-              יוצרי הקורס
-            </h3>
-            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
               {content.about.team.map((member, index) => (
                 <div key={index} className="text-center">
@@ -72,13 +68,14 @@ export default function About() {
                   </h4>
                   
                   {/* All highlights */}
-                  <div className="space-y-2 mb-4">
-                    {member.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-center justify-center">
-                        <span className="text-secondary text-sm mr-2">✓</span>
-                        <p className="text-gray-600 text-sm font-content">{highlight}</p>
-                      </div>
-                    ))}
+                  <div className="space-y-2 mb-4 flex flex-col items-center">
+                    <div className="text-right">
+                      {member.highlights.map((highlight, idx) => (
+                        <div key={idx} className="dir-rtl">
+                          <span className="text-secondary text-sm mr-2">✓</span><span className="text-gray-600 text-sm font-content mr-2">{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   
                   {/* Description */}
@@ -88,13 +85,6 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </motion.div>
-
-          {/* Single unified message */}
-          <motion.div variants={itemVariants} className="text-center">
-            <p className="text-lg text-text-dark leading-relaxed font-content max-w-3xl mx-auto">
-              {content.about.valueProposition.description}
-            </p>
           </motion.div>
         </motion.div>
       </div>

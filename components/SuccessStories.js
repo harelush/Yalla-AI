@@ -113,8 +113,9 @@ export default function SuccessStories() {
             {/* Navigation Arrows - RTL: Right arrow goes to next (more intuitive), Left arrow goes to previous */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
+              className="absolute left-3 top-1/2 -translate-y-1/2 transform bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
               disabled={currentSlide === 0}
+              style={{ top: 'calc(50% - 2rem)' }}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -122,8 +123,9 @@ export default function SuccessStories() {
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
+              className="absolute right-3 top-1/2 -translate-y-1/2 transform bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
               disabled={currentSlide === videos.length - 1}
+              style={{ top: 'calc(50% - 2rem)' }}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -150,8 +152,8 @@ export default function SuccessStories() {
               })}
             </div>
 
-            {/* Video Caption */}
-            <div className="mt-4 text-center">
+            {/* Video Caption - Desktop only */}
+            <div className="mt-4 text-center hidden md:block">
               <p className="text-sm font-semibold text-text-dark bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-gray-200">
                 {videos[currentSlide].caption}
               </p>
