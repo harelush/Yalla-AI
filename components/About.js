@@ -36,9 +36,6 @@ export default function About() {
           <h2 className="text-5xl md:text-6xl font-bold mb-6 font-header">
             <span className="header-text">{content.about.title}</span>
           </h2>
-          <p className="text-xl text-text-dark max-w-3xl mx-auto font-content">
-            {content.about.subtitle}
-          </p>
         </motion.div>
 
         {/* Main Content */}

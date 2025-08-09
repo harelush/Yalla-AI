@@ -107,7 +107,8 @@
       "footer": "זה לא עוד שיעור תיאורטי — זה קורה כאן ועכשיו 👆",
       "urls": [
         "https://www.youtube.com/embed/S-mWgl8ImVc",
-        "https://www.youtube.com/embed/wH60oiCODhg"
+        "https://www.youtube.com/embed/wH60oiCODhg",
+        "https://www.youtube.com/embed/CbaOh-GlSu4"
       ]
     }
   },
@@ -222,7 +223,6 @@
   "about": {
     "badge": "מי אנחנו?",
     "title": "על הקורס והצוות",
-    "subtitle": "למידה מעשית ונגישה לכולם, בהדרכת צוות מומחים עם ניסיון מהשטח",
     "courseDescription": "הקורס נבנה כדי לאפשר לכל אחד – גם בלי רקע טכנולוגי – ללמוד ולהשתמש בכלי פיתוח ו-AI בצורה מעשית ויעילה. הצוות המדריך משלב ניסיון מקצועי מעולמות שונים, כך שהלמידה תהיה גם מקצועית וגם נגישה.",
     "team": [
       {
@@ -275,6 +275,11 @@
         "url": "https://www.youtube.com/embed/wH60oiCODhg",
         "title": "סיפור הצלחה שני", 
         "caption": "🚀 מהתחלה חדשה להצלחה מסחררת"
+      },
+      {
+        "url": "https://www.youtube.com/embed/CbaOh-GlSu4",
+        "title": "סיפור הצלחה שלישי",
+        "caption": "✨ דוגמה נוספת להצלחה עם AI"
       }
     ],
     "cta": {
