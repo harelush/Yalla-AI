@@ -206,6 +206,7 @@
     "form": {
       "name_placeholder": "שם מלא",
       "phone_placeholder": "מספר טלפון",
+      "email_placeholder": "אימייל",
       "submit": "שליחה",
       "success": "תודה! נחזור אליך בהקדם",
       "error": "שגיאה בשליחה, אנא נסה שוב"

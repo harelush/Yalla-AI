@@ -5,14 +5,16 @@ import content from '../data/content.json'
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    phone: ''
+    phone: '',
+    email: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState('')
   const [messageType, setMessageType] = useState('')
   const [validationErrors, setValidationErrors] = useState({
     name: '',
-    phone: ''
+    phone: '',
+    email: ''
   })
 
   // Validation functions
@@ -41,6 +43,21 @@ export default function Contact() {
     return ''
   }
 
+  const validateEmail = (email) => {
+    // Email is optional, so if empty, it's valid
+    if (!email.trim()) {
+      return ''
+    }
+    
+    // Simple email regex for basic validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    
+    if (!emailRegex.test(email.trim())) {
+      return content.ui.contact.validation.email_invalid || 'כתובת אימייל לא תקינה'
+    }
+    return ''
+  }
+
   const handleChange = (e) => {
     const { name, value } = e.target
     
@@ -65,11 +82,13 @@ export default function Contact() {
     // Validate form
     const nameError = validateName(formData.name)
     const phoneError = validatePhone(formData.phone)
+    const emailError = validateEmail(formData.email)
 
-    if (nameError || phoneError) {
+    if (nameError || phoneError || emailError) {
       setValidationErrors({
         name: nameError,
-        phone: phoneError
+        phone: phoneError,
+        email: emailError
       })
       return
     }
@@ -77,18 +96,21 @@ export default function Contact() {
     // Clear any previous validation errors
     setValidationErrors({
       name: '',
-      phone: ''
+      phone: '',
+      email: ''
     })
 
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwPqpncgnHpINrf8Gkry1MjPvDi0_MTkkqWD6ZhQo0jgVOxh5nwHufPYHHHos1_l8YSrg/exec', {
+      const sheetsUrlScript = 'https://script.google.com/macros/s/AKfycbxUYMahS3bONcB8C25TV5_ePIDAPLkNBh87HDF_ZH9a7oGP9tIVdXXFCGGdrziYHoIJ1Q/exec';
+      const response = await fetch(sheetsUrlScript, {
         method: 'POST',
         mode: 'no-cors',
         body: JSON.stringify({
           name: formData.name,
-          phone: formData.phone
+          phone: formData.phone,
+          email: formData.email
         }),
       })
 
@@ -97,7 +119,8 @@ export default function Contact() {
       setMessageType('success')
       setFormData({
         name: '',
-        phone: ''
+        phone: '',
+        email: ''
       })
     } catch (error) {
       console.error('Form submission error:', error)
@@ -225,6 +248,29 @@ export default function Contact() {
                    <p className="mt-1 text-sm text-red-600">{validationErrors.phone}</p>
                  )}
                </div>
+
+              {/* Email */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-text-dark mb-2 font-content">
+                  {content.cta.form.email_placeholder}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 bg-white border rounded-lg text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all font-content ${
+                    validationErrors.email 
+                      ? 'border-red-500 focus:ring-red-500' 
+                      : 'border-gray-300 focus:ring-primary'
+                  }`}
+                  placeholder={content.cta.form.email_placeholder}
+                />
+                {validationErrors.email && (
+                  <p className="mt-1 text-sm text-red-600">{validationErrors.email}</p>
+                )}
+              </div>
 
               {/* Submit Button */}
               <button
