@@ -140,7 +140,7 @@ export default function FreeAIToolsPage() {
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-4xl mx-auto">
-                  הרשימה המלאה והכנה של הכלים הטובים ביותר ללמידת בינה מלאכותית. בעברית, עם דירוגים אמיתיים ובלי ביס.
+                  הרשימה המלאה והכנה של הכלים הטובים ביותר ללמידת בינה מלאכותית. בעברית, עם דירוגים אמיתיים .
                 </p>
               </motion.div>
             </div>
