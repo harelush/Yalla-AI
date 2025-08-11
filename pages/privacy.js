@@ -15,8 +15,7 @@ export default function PrivacyPage() {
         {/* Prevent indexing of privacy policy page */}
         <meta name="robots" content="noindex, nofollow" />
         
-        {/* RTL support */}
-        <html dir="rtl" lang="he" />
+        {/* RTL support is handled in _document.js */}
       </Head>
       <Layout>
         <Privacy />
