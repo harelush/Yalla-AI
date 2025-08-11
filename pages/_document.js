@@ -11,7 +11,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Assistant:wght@200;300;400;500;600;700;800&display=swap" 
           rel="stylesheet" 
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* viewport should be set in _app.js, not here */}
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       </Head>
       <body className="font-content bg-white text-text-dark antialiased">

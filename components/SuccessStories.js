@@ -40,6 +40,27 @@ export default function SuccessStories() {
 
   return (
     <section id="success-stories" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary/5 to-primary/5">
+      {/* Video schema for better rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": videos.map((v, i) => ({
+              "@type": "VideoObject",
+              "position": i + 1,
+              "name": v.title,
+              "description": content.successStories.subtitle,
+              "thumbnailUrl": [
+                `https://i.ytimg.com/vi/${(v.url.match(/embed\/(.+)$/)||[])[1]||''}/hqdefault.jpg`
+              ],
+              "uploadDate": "2025-01-01",
+              "embedUrl": v.url
+            }))
+          })
+        }}
+      />
       <div className="container-max">
         {/* Section Header */}
         <motion.div

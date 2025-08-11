@@ -89,27 +89,9 @@ export default function App({ Component, pageProps }) {
           }}
         />
         
-        {/* FAQ Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": content.faq.items.map(faq => ({
-                "@type": "Question",
-                "name": faq.question,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": faq.answer
-                }
-              }))
-            })
-          }}
-        />
+        {/* Page-specific schemas should live on their pages to avoid sitewide conflicts */}
         
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://yallaai.co.il" />
+        {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />

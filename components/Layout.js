@@ -31,6 +31,9 @@ export default function Layout({ children }) {
               <Link href="/ai-guide" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.ai_guide}
               </Link>
+              <Link href="/chatgpt-5" className="text-white hover:text-secondary transition-colors">
+                {content.navigation.chatgpt5}
+              </Link>
               <Link href="/free-ai-tools" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.free_tools}
               </Link>
@@ -77,6 +80,9 @@ export default function Layout({ children }) {
                 </Link>
                 <Link href="/ai-guide" className="text-white hover:text-secondary transition-colors py-2">
                   {content.navigation.ai_guide}
+                </Link>
+                <Link href="/chatgpt-5" className="text-white hover:text-secondary transition-colors py-2">
+                  {content.navigation.chatgpt5}
                 </Link>
                 <Link href="/free-ai-tools" className="text-white hover:text-secondary transition-colors py-2">
                   {content.navigation.free_tools}

@@ -18,7 +18,21 @@ export default function AIGuidePage() {
         <meta property="og:title" content="המדריך השלם ללמידת AI למתחילים בישראל 2025" />
         <meta property="og:description" content="כל מה שצריך לדעת על בינה מלאכותית למתחילים - מ-ChatGPT ועד כלים מתקדמים. בעברית, פשוט ומעשי." />
         <meta property="og:image" content="/images/ai-guide-og.jpg" />
+        <meta property="og:url" content="https://yallaai.co.il/ai-guide" />
         <link rel="canonical" href="https://yallaai.co.il/ai-guide" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {"@type":"ListItem","position":1,"name":"בית","item":"https://yallaai.co.il/"},
+                {"@type":"ListItem","position":2,"name":"מדריך AI","item":"https://yallaai.co.il/ai-guide"}
+              ]
+            })
+          }}
+        />
         
         {/* Article Schema */}
         <script
