@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Allow all AI-related content pages
+Allow: /ai-guide
+Allow: /free-ai-tools
+Allow: /ai-for-work
+
+# Disallow private pages
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /static/
+
+# Sitemap location
+Sitemap: https://yallaai.co.il/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

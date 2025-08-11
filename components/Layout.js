@@ -22,14 +22,17 @@ export default function Layout({ children }) {
 
             {/* Desktop Navigation - Left Side */}
             <div className="hidden md:flex items-center space-x-reverse space-x-8 ml-8 md:ml-16 lg:ml-32 mx-4 md:mx-10">
-              <Link href="#hero" className="text-white hover:text-secondary transition-colors">
+              <Link href="/" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.home}
               </Link>
               <Link href="#about" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.about}
               </Link>
-              <Link href="#benefits" className="text-white hover:text-secondary transition-colors">
-                {content.navigation.features}
+              <Link href="/ai-guide" className="text-white hover:text-secondary transition-colors">
+                {content.navigation.ai_guide}
+              </Link>
+              <Link href="/free-ai-tools" className="text-white hover:text-secondary transition-colors">
+                {content.navigation.free_tools}
               </Link>
               <Link href="#testimonials" className="text-white hover:text-secondary transition-colors">
                 {content.navigation.testimonials}
@@ -66,14 +69,17 @@ export default function Layout({ children }) {
           {isMenuOpen && (
             <div className="md:hidden py-4 px-4 border-t border-gray-200">
               <div className="flex flex-col space-y-4">
-                <Link href="#hero" className="text-white hover:text-secondary transition-colors py-2">
+                <Link href="/" className="text-white hover:text-secondary transition-colors py-2">
                   {content.navigation.home}
                 </Link>
                 <Link href="#about" className="text-white hover:text-secondary transition-colors py-2">
                   {content.navigation.about}
                 </Link>
-                <Link href="#benefits" className="text-white hover:text-secondary transition-colors py-2">
-                  {content.navigation.features}
+                <Link href="/ai-guide" className="text-white hover:text-secondary transition-colors py-2">
+                  {content.navigation.ai_guide}
+                </Link>
+                <Link href="/free-ai-tools" className="text-white hover:text-secondary transition-colors py-2">
+                  {content.navigation.free_tools}
                 </Link>
                 <Link href="#testimonials" className="text-white hover:text-secondary transition-colors py-2">
                   {content.navigation.testimonials}
