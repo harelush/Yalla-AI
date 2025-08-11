@@ -13,11 +13,13 @@ export default function Layout({ children }) {
           <div className="flex items-center h-full px-4 md:px-0">
             {/* Logo - Far Left */}
             <div className="flex items-center">
-              <img 
-                src="/images/darkmode_logo.svg" 
-                alt="YallaAI" 
-                className="h-32 w-auto"
-              />
+              <Link href="/">
+                <img 
+                  src="/images/darkmode_logo.svg" 
+                  alt="YallaAI" 
+                  className="h-32 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </Link>
             </div>
 
             {/* Desktop Navigation - Left Side */}
@@ -109,11 +111,13 @@ export default function Layout({ children }) {
         <div className="container-max section-padding">
           <div className="text-center">
             <div className="flex items-center justify-center mb-4">
-              <img 
-                src="/images/darkmode_logo.svg" 
-                alt="YallaAI" 
-                className="h-24 w-auto"
-              />
+              <Link href="/">
+                <img 
+                  src="/images/darkmode_logo.svg" 
+                  alt="YallaAI" 
+                  className="h-24 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </Link>
             </div>
             <p className="text-gray-300 mb-4">{content.footer.rights}</p>
             <div className="flex justify-center space-x-reverse space-x-6 text-sm text-gray-300">
