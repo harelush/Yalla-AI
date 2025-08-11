@@ -72,7 +72,7 @@ export default function Layout({ children }) {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 px-4 border-t border-gray-200">
+            <div className="md:hidden py-4 px-4 border-t border-gray-200 bg-hero-bg">
               <div className="flex flex-col space-y-4">
                 <Link href="/" className="text-white hover:text-secondary transition-colors py-2">
                   {content.navigation.home}
