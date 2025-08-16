@@ -18,7 +18,6 @@ export default function Document() {
             <script
               dangerouslySetInnerHTML={{
                 __html: `
-                  console.log('🔍 Google Analytics ID:', '${process.env.NEXT_PUBLIC_GA_ID}');
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
@@ -26,7 +25,6 @@ export default function Document() {
                     page_title: document.title,
                     page_location: window.location.href,
                   });
-                  console.log('✅ Google Analytics initialized with ID:', '${process.env.NEXT_PUBLIC_GA_ID}');
                 `,
               }}
             />
