@@ -8,6 +8,9 @@ const nextConfig = {
   // assetPrefix: process.env.NODE_ENV === 'production' ? '/Yalla-AI/' : '',
   images: {
     unoptimized: true
+  },
+  env: {
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
   }
 }
 
