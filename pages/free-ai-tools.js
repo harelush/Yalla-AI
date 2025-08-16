@@ -140,7 +140,7 @@ export default function FreeAIToolsPage() {
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-4xl mx-auto">
-                  הרשימה המלאה והכנה של הכלים הטובים ביותר ללמידת בינה מלאכותית. בעברית, עם דירוגים אמיתיים .
+                  רשימת הכלים הטובים ביותר למתחילים בישראל - הרשימה המלאה והכנה של הכלים הטובים ביותר ללמידת בינה מלאכותית. בעברית, עם דירוגים אמיתיים.
                 </p>
               </motion.div>
             </div>
@@ -157,9 +157,9 @@ export default function FreeAIToolsPage() {
                 transition={{ duration: 0.6 }}
                 className="bg-surface rounded-2xl p-8 mb-12 shadow-lg text-center"
               >
-                <h2 className="text-3xl font-bold mb-4 text-primary">🎯 למי הרשימה הזו?</h2>
+                <h2 className="text-3xl font-bold mb-4 text-primary">🎯 למי רשימת הכלים הטובים ביותר למתחילים?</h2>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                  אם אתם מתחילים עם AI, רוצים לנסות כלים חינמיים לפני שקונים משהו, או פשוט סקרנים - הרשימה הזו בשבילכם.
+                  אם אתם מתחילים עם AI בישראל, רוצים לנסות כלים חינמיים לפני שקונים משהו, או פשוט סקרנים - רשימת הכלים הטובים ביותר הזו בשבילכם.
                   כל כלי נבדק על ידינו ואנחנו נותנים לכם את האמת - גם הטוב וגם הפחות טוב.
                 </p>
               </motion.div>
@@ -190,7 +190,7 @@ export default function FreeAIToolsPage() {
                       
                       {/* Pros */}
                       <div className="mb-4">
-                        <h4 className="font-bold text-green-600 mb-2">✅ יתרונות:</h4>
+                        <div className="font-bold text-green-600 mb-2">✅ יתרונות:</div>
                         <ul className="text-sm space-y-1">
                           {tool.pros.map((pro, idx) => (
                             <li key={idx} className="text-green-600">• {pro}</li>
@@ -200,7 +200,7 @@ export default function FreeAIToolsPage() {
 
                       {/* Cons */}
                       <div className="mb-6">
-                        <h4 className="font-bold text-red-600 mb-2">❌ חסרונות:</h4>
+                        <div className="font-bold text-red-600 mb-2">❌ חסרונות:</div>
                         <ul className="text-sm space-y-1">
                           {tool.cons.map((con, idx) => (
                             <li key={idx} className="text-red-600">• {con}</li>
@@ -215,7 +215,7 @@ export default function FreeAIToolsPage() {
                         rel="noopener noreferrer"
                         className="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-center py-3 rounded-lg font-semibold transition-colors"
                       >
-                        נסו עכשיו →
+                        נסו את {tool.name} →
                       </a>
                     </div>
                   </motion.div>
@@ -287,16 +287,16 @@ export default function FreeAIToolsPage() {
                 transition={{ duration: 0.6 }}
                 className="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-2xl text-center"
               >
-                <h2 className="text-3xl font-bold mb-4">רוצים להפוך למקצועים ב-AI?</h2>
+                <h2 className="text-3xl font-bold mb-4">מוכנים להתקדם לרמה הבאה ב-AI?</h2>
                 <p className="text-xl mb-6 opacity-90">
                   הכלים הבסיסיים זה רק ההתחלה. בקורס שלנו תלמדו איך להפיק מהם את המקסימום.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link href="/ai-guide" className="btn-secondary bg-white text-primary hover:bg-gray-100 text-lg font-bold">
-                    קראו את המדריך המלא
+                    המדריך המקיף ל-AI
                   </Link>
                   <Link href="/#contact" className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary text-lg font-bold">
-                    רוצה ללמוד עם מומחים
+                    הדרכה אישית עם מומחים
                   </Link>
                 </div>
               </motion.div>

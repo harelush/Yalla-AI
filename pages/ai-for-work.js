@@ -158,7 +158,7 @@ export default function AIForWorkPage() {
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-4xl mx-auto">
-                  איך להשתמש בבינה מלאכותית כדי לחסוך זמן, לשפר תוצאות ולהקדים את כולם בעבודה. דוגמאות מעשיות לכל מקצוע.
+                  איך להשתמש בבינה מלאכותית כדי לחסוך זמן וכסף, לשפר תוצאות ולהקדים את כולם בעבודה. דוגמאות מעשיות לכל מקצוע שיחסכו לכם זמן יקר.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="#professions" className="btn-secondary bg-white text-primary hover:bg-gray-100 text-lg font-bold">
@@ -183,7 +183,7 @@ export default function AIForWorkPage() {
               >
                 <h2 className="text-4xl font-bold mb-6 text-primary">🚀 למה AI זה המשנה משחק של 2025?</h2>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-12">
-                  בזמן שכולם עוד מתלבטים, החכמים כבר משתמשים ב-AI ומקבלים יתרון עצום בעבודה
+                  בזמן שכולם עוד מתלבטים, החכמים כבר משתמשים ב-AI ומקבלים יתרון עצום בעבודה. בינה מלאכותית תחסוך לכם זמן וכסף משמעותיים בעבודה היומיומית.
                 </p>
               </motion.div>
 
@@ -274,7 +274,7 @@ export default function AIForWorkPage() {
 
                     {/* Content */}
                     <div className="p-6">
-                      <h4 className="font-bold text-lg mb-4 text-gray-800">📋 מה AI יכול לעשות בשבילכם:</h4>
+                      <div className="font-bold text-lg mb-4 text-gray-800">📋 מה AI יכול לעשות בשבילכם:</div>
                       <ul className="space-y-2 mb-6">
                         {profession.useCases.map((useCase, idx) => (
                           <li key={idx} className="flex items-start">
@@ -284,7 +284,7 @@ export default function AIForWorkPage() {
                         ))}
                       </ul>
 
-                      <h4 className="font-bold text-lg mb-3 text-gray-800">🛠️ הכלים המומלצים:</h4>
+                      <div className="font-bold text-lg mb-3 text-gray-800">🛠️ הכלים המומלצים:</div>
                       <div className="flex flex-wrap gap-2">
                         {profession.tools.map((tool, idx) => (
                           <span 
@@ -372,7 +372,7 @@ export default function AIForWorkPage() {
                 transition={{ duration: 0.6 }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6 text-primary">🎯 איך מתחילים - המדריך המעשי</h2>
+                <h2 className="text-4xl font-bold mb-6 text-primary">🎯 תוכנית יישום AI בעבודה - 30 יום</h2>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                   תוכנית פעולה פשוטה להטמעת AI בעבודה שלכם תוך 30 יום
                 </p>
@@ -457,13 +457,13 @@ export default function AIForWorkPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/ai-guide" className="btn-secondary bg-white text-primary hover:bg-gray-100 text-lg font-bold">
-                  המדריך המלא למתחילים
+                  מדריך AI מקיף למתחילים
                 </Link>
                 <Link href="/free-ai-tools" className="btn-secondary bg-white text-primary hover:bg-gray-100 text-lg font-bold">
-                  הכלים החינמיים הטובים ביותר
+                  רשימת כלים חינמיים מומלצים
                 </Link>
                 <Link href="/#contact" className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary text-lg font-bold">
-                  רוצה ללמוד עם מומחים
+                  הדרכה מקצועית עם מומחי AI
                 </Link>
               </div>
             </div>

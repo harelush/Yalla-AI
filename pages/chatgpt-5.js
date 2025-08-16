@@ -81,15 +81,15 @@ export default function ChatGPT5Page() {
                 <span className="text-white text-shadow">ChatGPT 5 בעברית – מה חדש ואיך מתחילים</span>
               </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-4xl mx-auto">
-                הסבר קצר ופשוט על ChatGPT 5 (או Chat GPT 5) – מה זה אומר בשבילכם, איך זה עוזר ביום-יום, ואיך מתחילים ממש עכשיו בעברית.
+                הסבר קצר ופשוט על ChatGPT 5 (או Chat GPT 5) מ-YallaAI – מה זה אומר בשבילכם, איך זה עוזר ביום-יום, ואיך מתחילים ממש עכשיו בעברית.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button onClick={scrollToContact} className="btn-primary text-lg group" aria-label="הירשמו לשיעור ניסיון">
                   רוצה ללמוד עם מדריך בעברית?
                   <span className="inline-block transition-transform group-hover:translate-x-1 mr-2">←</span>
                 </button>
-                <Link href="/ai-guide" className="btn-secondary text-lg" aria-label="מעבר למדריך המלא">
-                  מדריך AI למתחילים
+                <Link href="/ai-guide" className="btn-secondary text-lg" aria-label="מעבר למדריך השלם">
+                  המדריך השלם ל-AI
                 </Link>
               </div>
             </motion.div>
@@ -100,7 +100,7 @@ export default function ChatGPT5Page() {
           <div className="container-max max-w-4xl">
             <div className="prose prose-xl max-w-none text-right">
               <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-12">
-                <h2 className="text-4xl font-bold mb-6 text-primary">מה חדש ב-ChatGPT 5 – במילים פשוטות</h2>
+                <h2 className="text-4xl font-bold mb-6 text-primary">מה חדש ב-ChatGPT 5 מ-YallaAI – במילים פשוטות</h2>
                 <div className="bg-blue-50 p-6 rounded-xl mb-6">
                   <h3 className="text-2xl font-bold mb-3 text-blue-800">בקצרה:</h3>
                   <ul className="list-disc list-inside text-blue-800 space-y-2">
@@ -141,7 +141,7 @@ export default function ChatGPT5Page() {
                     <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
                     <div>
                       <h3 className="text-xl font-bold mb-2">נרשמים ומתחילים בעברית</h3>
-                      <p className="text-gray-700">שאלו שאלות קצרות על נושאים שמעניינים אתכם. אל תפחדו לנסות.</p>
+                      <p className="text-gray-700">שאלו שאלות קצרות על נושאים שמעניינים אתכם. אל תפחדו לנסות. <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">התחילו כאן</a></p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4 space-x-reverse">
@@ -162,7 +162,7 @@ export default function ChatGPT5Page() {
               </motion.section>
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-2xl text-center">
-                <h2 className="text-3xl font-bold mb-4">רוצים מסלול מסודר ומרצה בעברית?</h2>
+                <h2 className="text-3xl font-bold mb-4">מחפשים הדרכה מקצועית ב-ChatGPT 5?</h2>
                 <p className="text-xl mb-6 opacity-90">הקורס שלנו למתחילים עושה לכם סדר – מהבסיס ועד שימוש אמיתי ביום-יום.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/#contact" className="btn-secondary bg-white text-primary hover:bg-gray-100 text-lg font-bold">שיחה קצרה עם מדריך</Link>

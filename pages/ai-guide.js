@@ -82,7 +82,7 @@ export default function AIGuidePage() {
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-4xl mx-auto">
-                  כל מה שצריך לדעת על בינה מלאכותית בישראל - מהבסיס ועד לכלים המתקדמים. בשפה פשוטה, בעברית, עם דוגמאות מהחיים.
+                  איך ללמוד בינה מלאכותית בעברית בישראל - כל מה שצריך לדעת מהבסיס ועד לכלים המתקדמים. בשפה פשוטה, בעברית, עם דוגמאות מהחיים למתחילים.
                 </p>
               </motion.div>
             </div>
@@ -100,13 +100,13 @@ export default function AIGuidePage() {
                   transition={{ duration: 0.6 }}
                   className="bg-surface rounded-2xl p-8 mb-12 shadow-lg"
                 >
-                  <h2 className="text-3xl font-bold mb-6 text-primary">📋 מה נלמד במדריך?</h2>
+                  <h2 className="text-3xl font-bold mb-6 text-primary">📋 מה נלמד במדריך AI למתחילים בישראל?</h2>
                   <ul className="list-none space-y-3 text-lg">
-                    <li>🤖 <strong>מה זה בינה מלאכותית</strong> - הבסיס בשפה פשוטה</li>
-                    <li>💬 <strong>ChatGPT למתחילים</strong> - איך משתמשים ומה אפשר לעשות</li>
-                    <li>🛠️ <strong>הכלים הכי שימושיים</strong> - מה כדאי להכיר ב-2025</li>
+                    <li>🤖 <strong>מה זה בינה מלאכותית</strong> - הבסיס בשפה פשוטה בעברית</li>
+                    <li>💬 <strong>ChatGPT למתחילים</strong> - איך ללמוד ולהשתמש ומה אפשר לעשות</li>
+                    <li>🛠️ <strong>הכלים הכי שימושיים</strong> - מה כדאי להכיר ב-2025 בישראל</li>
                     <li>💼 <strong>AI לעבודה</strong> - איך זה יכול לעזור לכם היום</li>
-                    <li>🎯 <strong>איך מתחילים</strong> - צעד אחר צעד מהיום</li>
+                    <li>🎯 <strong>איך מתחילים ללמוד</strong> - צעד אחר צעד מהיום</li>
                   </ul>
                 </motion.div>
 
@@ -199,7 +199,7 @@ export default function AIGuidePage() {
                       <h3 className="text-xl font-bold mb-3 text-primary">💬 ChatGPT</h3>
                       <p className="mb-3"><strong>בשביל מה:</strong> כתיבה, תכנון, שאלות</p>
                       <p className="mb-3"><strong>חינמי?</strong> כן (עם מגבלות)</p>
-                      <p className="text-sm text-gray-600">הכלי הכי בסיסי וחשוב</p>
+                      <p className="text-sm text-gray-600">הכלי הכי בסיסי וחשוב - <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">נסו כאן</a></p>
                     </div>
 
                     {/* Canva AI */}
@@ -207,7 +207,7 @@ export default function AIGuidePage() {
                       <h3 className="text-xl font-bold mb-3 text-primary">🎨 Canva AI</h3>
                       <p className="mb-3"><strong>בשביל מה:</strong> עיצובים, פוסטים, מצגות</p>
                       <p className="mb-3"><strong>חינמי?</strong> חלקית</p>
-                      <p className="text-sm text-gray-600">מושלם למי שלא יודע לעצב</p>
+                      <p className="text-sm text-gray-600">מושלם למי שלא יודע לעצב - <a href="https://canva.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">התחילו כאן</a></p>
                     </div>
 
                     {/* Claude */}
@@ -215,7 +215,7 @@ export default function AIGuidePage() {
                       <h3 className="text-xl font-bold mb-3 text-primary">🧠 Claude</h3>
                       <p className="mb-3"><strong>בשביל מה:</strong> ניתוח טקסטים, כתיבה מתקדמת</p>
                       <p className="mb-3"><strong>חינמי?</strong> כן (עם מגבלות)</p>
-                      <p className="text-sm text-gray-600">חלופה מעולה ל-ChatGPT</p>
+                      <p className="text-sm text-gray-600">חלופה מעולה ל-ChatGPT - <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">בדקו כאן</a></p>
                     </div>
 
                     {/* Perplexity */}
@@ -223,7 +223,7 @@ export default function AIGuidePage() {
                       <h3 className="text-xl font-bold mb-3 text-primary">🔍 Perplexity</h3>
                       <p className="mb-3"><strong>בשביל מה:</strong> חיפוש מידע עדכני</p>
                       <p className="mb-3"><strong>חינמי?</strong> כן (עם מגבלות)</p>
-                      <p className="text-sm text-gray-600">כמו גוגל אבל עם תשובות חכמות</p>
+                      <p className="text-sm text-gray-600">כמו גוגל אבל עם תשובות חכמות - <a href="https://perplexity.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">חפשו כאן</a></p>
                     </div>
                   </div>
                 </motion.section>
@@ -321,7 +321,7 @@ export default function AIGuidePage() {
                   transition={{ duration: 0.6 }}
                   className="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-2xl text-center"
                 >
-                  <h2 className="text-3xl font-bold mb-4">רוצים ללמוד בצורה מובנית ומקצועית?</h2>
+                  <h2 className="text-3xl font-bold mb-4">מעוניינים בקורס AI מובנה ומקצועי?</h2>
                   <p className="text-xl mb-6 opacity-90">
                     המדריך הזה נתן לכם טעימה, אבל יש עוד הרבה מה ללמוד! בקורס שלנו תקבלו:
                   </p>
@@ -332,7 +332,7 @@ export default function AIGuidePage() {
                     <li>✅ עדכונים שוטפים על כלים חדשים</li>
                   </ul>
                   <Link href="/#contact" className="btn-secondary bg-white text-primary hover:bg-gray-100 text-lg font-bold">
-                    רוצה לדעת יותר על הקורס
+                    פרטים על הקורס המלא
                   </Link>
                 </motion.div>
               </div>
