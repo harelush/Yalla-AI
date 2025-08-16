@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import content from '../data/content.json'
+import * as gtag from '../lib/gtag'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -117,6 +118,16 @@ export default function Contact() {
       // With no-cors mode, we can't read the response, but if no error is thrown, it likely succeeded
       setMessage(content.ui.contact.messages.success)
       setMessageType('success')
+      
+      // Track successful form submission
+      gtag.trackFormSubmission('contact_form')
+      gtag.event({
+        action: 'generate_lead',
+        category: 'conversion',
+        label: 'contact_form_success',
+        value: 1
+      })
+      
       setFormData({
         name: '',
         phone: '',
