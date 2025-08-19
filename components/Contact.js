@@ -12,6 +12,8 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState('')
   const [messageType, setMessageType] = useState('')
+  const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] = useState(false)
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false)
   const [validationErrors, setValidationErrors] = useState({
     name: '',
     phone: '',
@@ -78,6 +80,12 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
+    // Prevent resubmission if already submitted successfully
+    if (isSubmittedSuccessfully) {
+      return
+    }
+    
     setMessage('')
 
     // Validate form
@@ -118,6 +126,8 @@ export default function Contact() {
       // With no-cors mode, we can't read the response, but if no error is thrown, it likely succeeded
       setMessage(content.ui.contact.messages.success)
       setMessageType('success')
+      setIsSubmittedSuccessfully(true)
+      setShowSuccessPopup(true)
       
       // Track successful form submission
       gtag.trackFormSubmission('contact_form')
@@ -137,6 +147,9 @@ export default function Contact() {
       console.error('Form submission error:', error)
       setMessage(content.ui.contact.messages.error)
       setMessageType('error')
+      // Reset success state on error so user can try again
+      setIsSubmittedSuccessfully(false)
+      setShowSuccessPopup(false)
     } finally {
       setIsSubmitting(false)
     }
@@ -286,12 +299,17 @@ export default function Contact() {
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isSubmittedSuccessfully}
                 className="w-full btn-primary text-lg group disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="שלח טופס יצירת קשר"
               >
-                {isSubmitting ? content.ui.contact.messages.submitting : content.cta.form.submit}
-                {!isSubmitting && (
+                {isSubmitting 
+                  ? content.ui.contact.messages.submitting 
+                  : isSubmittedSuccessfully 
+                    ? 'הטופס נשלח בהצלחה!'
+                    : content.cta.form.submit
+                }
+                {!isSubmitting && !isSubmittedSuccessfully && (
                   <span className="inline-block transition-transform group-hover:translate-x-1 mr-2">←</span>
                 )}
               </button>
@@ -314,6 +332,45 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
+
+      {/* Success Popup Modal */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            className="bg-white rounded-2xl p-8 mx-4 max-w-md w-full shadow-2xl border border-gray-200"
+          >
+            <div className="text-center">
+              {/* Success Icon */}
+              <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-text-dark mb-4 font-header">
+                הטופס נשלח בהצלחה! 🎉
+              </h3>
+              
+              {/* Message */}
+              <p className="text-text-dark mb-6 font-content leading-relaxed">
+                תודה על פנייתך! נחזור אליך בהקדם האפשרי עם כל הפרטים על הקורס.
+              </p>
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setShowSuccessPopup(false)}
+                className="w-full btn-primary"
+              >
+                סגור
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </section>
   )
 } 
